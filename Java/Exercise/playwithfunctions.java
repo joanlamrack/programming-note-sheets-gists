@@ -21,6 +21,6 @@ public class playwithfunctions{
 	}
 
 	public static String processSentence(String name, int age, String address, String hobby){
-		return "Nama saya "+name+"umur saya "+age+" tahun, alamat saya di "+address+", dan saya punya hobi yaitu "+hobby;
+		return "Nama saya "+name+" umur saya "+age+" tahun, alamat saya di "+address+", dan saya punya hobi yaitu "+hobby;
 	}
 }
