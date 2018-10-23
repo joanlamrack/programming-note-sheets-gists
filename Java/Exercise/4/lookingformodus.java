@@ -3,12 +3,12 @@ import java.util.HashMap;
 
 public class lookingformodus{
 	public static void main(String[]args){
-		HashMap<Integer, Integer> input = dolookingformodus(new int[]{1,3,3});
+		int input = dolookingformodus(new int[]{1,3,3});
 
-		System.out.println(Arrays.asList(input));
+		System.out.println(input);
 	}
 
-	public static HashMap<Integer, Integer> dolookingformodus(int[] input){
+	public static int dolookingformodus(int[] input){
 		HashMap<Integer,Integer> container= new HashMap<Integer,Integer>();
 		int biggestModeNumber = 0;
 		int occurences = 0;
@@ -26,7 +26,7 @@ public class lookingformodus{
 			}
 
 		}
-		
+
 		return biggestModeNumber;
 	}
 }
