@@ -22,8 +22,6 @@ public class groupinganimal{
 			}
 		}
 
-
-	
 		return output.toArray(new String[output.size()][]);
 	}
 
