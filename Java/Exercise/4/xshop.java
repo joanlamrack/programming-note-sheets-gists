@@ -2,11 +2,35 @@ import java.util.HashMap;
 
 public class xshop{
 
+	class shopper{
+		String shopperName = "";
+		String productName = "";
+		int amount = 0;
+
+		shopper(String shopperName, String productName, int amount){
+			this.shopperName = shopperName;
+			this.productName = productName;
+			this.amount = amount;
+		}
+
+		public String getShopperName(){
+			return this.shopperName;
+		}
+
+		public String getProductName(){
+			return this.productName;
+		}
+
+		public int getAmountForShopping(){
+			return this.amount;
+		}
+	}
+
 	class shopItem{
 		private String itemName = "";
 		private int itemPrice = 0;
 		private int itemCount = 0;
-		private ArrayList<String> = n
+		private ArrayList<String> shoppers = new ArrayList<String>();
 
 		shopItem(String itemName, int itemPrice, int itemCount){
 			this.itemName = itemName;
@@ -38,9 +62,6 @@ public class xshop{
 			new shopItem("Baju Zoro", 500000, 2),
 			new shopItem("Sweater Uniklooh", 175000, 1)
 		};
-
-		
-
 	}
 	public static void main(String[]args){
 
