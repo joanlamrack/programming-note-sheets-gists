@@ -8,7 +8,18 @@ public class Xshop{
 
 	public static String assessShoppers(Shopper[] input){
 		for(Shopper people : input){
+			for(ShopItem oneShopItem : shopItems){
+				if((oneShopItem.getItemName() == people.getProductName()) && (oneShopItem.getItemCount() - people.getAmountForShopping() >= 0)){
+					oneShopItem.decreaseItemCountBy(people.getAmountForShopping());
+					oneShopItem.addShopper(people);
+				}
+			}
+		}
+	}
 
+	public void printShopContent(){
+		for(ShopItem oneShopItem : shopItems){
+			System.out.println(oneShopItem.getItemName() +" "+oneShopItem.getItemCount());
 		}
 	}
 }

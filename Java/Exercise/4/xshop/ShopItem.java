@@ -23,6 +23,11 @@ public class ShopItem{
 	}
 
 	public void decreaseItemCountBy(int itemCountToBeDecrease){
-		this.itemCount-=itemCountToBeDecrease;
+		if(this.itemCount - itemCountToBeDecrease >= 0){
+			this.itemCount-=itemCountToBeDecrease;
+		}
+	}
+	public void addShopper(Shopper people){
+		this.shoppers.add(people.getShopperName());
 	}
 }
