@@ -29,10 +29,6 @@ public class mostFrequentLargestNumbers {
 			}
 		}
 
-		for (int key : mapper.keySet()) {
-			System.out.println(key + " : " + mapper.get(key));
-		}
-
 		for (int key : mapper.keySet()){
 			if(largestNumber == 0){
 				largestNumber = key;
