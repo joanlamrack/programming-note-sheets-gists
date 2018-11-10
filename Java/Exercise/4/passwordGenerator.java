@@ -8,7 +8,8 @@ public class passwordGenerator{
 	}
 
 	public static String reverseWord(String input){
-		return "";
+		String reversedWord = new StringBuilder(input).reverse().toString();
+		return reversedWord;
 	}
 
 	public static String setLowerUpperCase(String input){
