@@ -1,6 +1,8 @@
 public class passwordGenerator{
 	public static void main(String[]args){
+		String oi = "Sergei Dragunov";
 
+		System.out.println( dopasswordGenerator(oi) );
 	}
 
 	public static String changeVocals(String input){
@@ -44,6 +46,10 @@ public class passwordGenerator{
 	}
 
 	public static String dopasswordGenerator(String input){
-		return "";
+		String changedVocal = changeVocals(input);
+		String reversed = reverseWord(changedVocal);
+		String invertUpperLowerCase = setLowerUpperCase(reversed);
+		String spacesRemoved = removeSpaces(invertUpperLowerCase);
+		return spacesRemoved;
 	}
 }
