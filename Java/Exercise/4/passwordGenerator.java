@@ -1,13 +1,22 @@
 public class passwordGenerator{
 	public static void main(String[]args){
-		String oi = "hey heC";
-
-		System.out.println(setLowerUpperCase(oi));
 
 	}
 
 	public static String changeVocals(String input){
-		return "";
+		char[] compareSet = new char[]{'a', 'i', 'u', 'e', 'o', 'A', 'I', 'U', 'E', 'O'};
+		char[] compareSet2 = new char[]{'b', 'j', 'v', 'f', 'p', 'B', 'J', 'V', 'F', 'P'};
+		char[] output = input.toCharArray();
+		
+		for(int start = 0 ; start < output.length ; start++){
+			for(int compareIndex = 0 ; compareIndex < compareSet.length ; compareIndex++){
+				if(output[start] == compareSet[compareIndex]){
+					output[start] = compareSet2[compareIndex];
+				}
+			}
+		}
+
+		return new String(output);
 	}
 
 	public static String reverseWord(String input){
