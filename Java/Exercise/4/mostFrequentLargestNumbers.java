@@ -4,9 +4,7 @@ import java.util.HashMap;
 public class mostFrequentLargestNumbers {
 	public static void main(String[] args) {
 		int[] input = new int[] { 2, 8, 4, 6, 8, 5, 8, 4 };
-		System.out.println(Arrays.toString(sorting(input)));
-		// System.out.println( mostFrequentLargestNumber( sorting(input) ) );
-		getTotal(sorting(input));
+		System.out.println( mostFrequentLargestNumber(input) );
 
 	}
 
