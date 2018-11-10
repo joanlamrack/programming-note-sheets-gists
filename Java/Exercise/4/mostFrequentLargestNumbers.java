@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class mostFrequentLargestNumbers {
 	public static void main(String[] args) {
 		int[] input = new int[] { 2, 8, 4, 6, 8, 5, 8, 4 };
-		System.out.println( mostFrequentLargestNumber(input) );
+		System.out.println(mostFrequentLargestNumber(input));
 
 	}
 
@@ -16,8 +16,8 @@ public class mostFrequentLargestNumbers {
 
 	public static String getTotal(int[] input) {
 		HashMap<Integer, Integer> mapper = new HashMap<Integer, Integer>();
-		int largestNumber = 0 ;
-		int largestNumberCount = 0 ; 
+		int largestNumber = 0;
+		int largestNumberCount = 0;
 
 		for (int number : input) {
 
@@ -29,18 +29,15 @@ public class mostFrequentLargestNumbers {
 			}
 		}
 
-		for (int key : mapper.keySet()){
-			if(largestNumber == 0){
-				largestNumber = key;
-				largestNumberCount = mapper.get(key);
-			}
-			else if(largestNumberCount < mapper.get(key)){
+		for (int key : mapper.keySet()) {
+			if ((largestNumber == 0) || (largestNumberCount < mapper.get(key))) {
 				largestNumber = key;
 				largestNumberCount = mapper.get(key);
 			}
 		}
 
-		return "angka paling besar adalah "+ largestNumber +" dan jumlah kemunculan sebanyak "+ largestNumberCount +" kali";
+		return "angka paling besar adalah " + largestNumber + " dan jumlah kemunculan sebanyak " + largestNumberCount
+				+ " kali";
 
 	}
 
