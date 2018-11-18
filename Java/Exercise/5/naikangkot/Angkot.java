@@ -1,9 +1,11 @@
 import java.awt.geom.RoundRectangle2D;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Angkot {
 	private String[] route;
 	private int pricePerOneStop = 0;
+	private ArrayList<AngkotHistory> history;
 
 	private class AngkotHistory {
 		Passanger passangerData;
@@ -28,8 +30,12 @@ public class Angkot {
 	public String assessPassangers(Passanger[] people){
 		String output = "";
 
-		for(Passanger apassanger){
+		for(Passanger apassanger : people){
+			history.add(new AngkotHistory(apassanger, calculatePrice(apassanger.getDestination() , apassanger.getPickUp())));
+		}
 
+		for(AngkotHistory oneHistory : this.history){
+			output+= oneHistory.toString();
 		}
 
 		return output;
