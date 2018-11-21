@@ -20,7 +20,7 @@ public class Class {
 	}
 
 	public void setBestStudent(Student newBestStudent){
-		this.bestStudent = newbestStudent;
+		this.bestStudent = newBestStudent;
 	}
 
 	@Override
