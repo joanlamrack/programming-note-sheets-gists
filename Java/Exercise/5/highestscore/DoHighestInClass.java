@@ -22,8 +22,7 @@ public class DoHighestInClass{
 		}
 	}
 
-	@Override
-	public String toString() {
+	public static String getContent() {
 		String output = "";
 		for(String key : classes.keySet()){
 			output += classes.get(key).toString();
