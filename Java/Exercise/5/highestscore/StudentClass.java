@@ -1,8 +1,8 @@
-public class Class {
+public class StudentClass {
 	private String name = "";
 	private Student bestStudent = null;
 
-	public Class(String className, Student bestStudent ){
+	public StudentClass(String className, Student bestStudent ){
 		this.name = className;
 		this.bestStudent = bestStudent;
 	}
