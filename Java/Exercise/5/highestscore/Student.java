@@ -20,4 +20,9 @@ public class Student{
 	public int getScore(){
 		return this.score;
 	}
+
+	@Override
+	public String toString() {
+		return this.name +" : "+this.score;
+	}
 }
