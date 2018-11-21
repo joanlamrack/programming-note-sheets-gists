@@ -21,6 +21,11 @@ public class Class {
 
 	public void setBestStudent(Student newBestStudent){
 		this.bestStudent = newbestStudent;
-	} 
+	}
+
+	@Override
+	public String toString() {
+		return this.name +" "+ this.bestStudent;
+	}
 
 }
