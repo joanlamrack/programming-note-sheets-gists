@@ -1,32 +1,26 @@
 public class Class {
 	private String name = "";
-	private String bestStudentName = "";
-	private int bestStudentScore = 0;
+	private Student bestStudent = null;
 
-	public Class(String className, String bestStudentName, int bestScore ){
+	public Class(String className, Student bestStudent ){
 		this.name = className;
-		this.bestStudentName = bestStudentName;
-		this.bestStudentScore = bestScore;
+		this.bestStudent = bestStudent;
 	}
 
 	public String getBestStudentName(){
-		return this.bestStudentName;
+		return this.bestStudent.getName();
 	}
 
 	public int getBestStudentScore(){
-		return this.bestStudentScore;
+		return this.bestStudent.getScore();
 	}
 
 	public String getClassName(){
 		return this.name;
 	}
 
-	public void setBestStudentScore(int bestScore){
-		this.bestStudentScore = bestScore;
-	}
-
-	public void setBestStudentName(int bestStudentName){
-		this.bestStudentName = bestStudentName;
+	public void setBestStudent(Student newBestStudent){
+		this.bestStudent = bestStudent;
 	} 
 
 }
