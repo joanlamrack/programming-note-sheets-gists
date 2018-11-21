@@ -1,7 +1,7 @@
 public class Student{
 	private String belongToClass = "";
 	private String name = "";
-	private int score = "";
+	private int score = 0;
 	
 	public Student(String className, String studentName, int studentScore){
 		this.belongToClass = className;
