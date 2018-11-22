@@ -5,7 +5,7 @@ public class ClassGraduates{
 	private int skbm = 75;
 
 	public ClassGraduates(Student firstStudent){
-		this.addMoreStudent(firstStudent);
+		this.addMoreStudentGraduated(firstStudent);
 	}
 
 	public void addMoreStudentGraduated(Student additionalStudent){
@@ -18,7 +18,7 @@ public class ClassGraduates{
 	public String toString() {
 		String output ="";
 		for(Student oneStudent : this.studentsGraduated){
-			output += oneStudent.getStudentName()+" : "+oneStudent.getStudentScore()+"\n";
+			output += " - "+oneStudent.getStudentName()+" : "+oneStudent.getStudentScore()+"\n";
 		}
 		return output;
 	}
