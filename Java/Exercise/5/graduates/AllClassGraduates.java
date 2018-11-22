@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class AllClassGraduates{
-	public static HashMap<String, ClassGraduates> allClassGraduates = new HashMap<String, ClassGraduates>(); 
+	private static HashMap<String, ClassGraduates> allClassGraduates = new HashMap<String, ClassGraduates>(); 
 
 	public static void assessAllStudents(Student[] allStudents){
 		for(Student oneStudent : allStudents){
@@ -20,12 +20,12 @@ public class AllClassGraduates{
 		}
 	}
 	
-	@Override
-	public String toString() {
+
+	public static String getContent() {
 		String output = "";
 
 		for(String classes : allClassGraduates.keySet()){
-			output+= classes +" : "+ allClassGraduates.get(classes);
+			output+= classes +" : \n"+ allClassGraduates.get(classes) ;
 		}
 
 		return output;
