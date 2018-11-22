@@ -20,4 +20,14 @@ public class AllClassGraduates{
 		}
 	}
 	
+	@Override
+	public String toString() {
+		String output = "";
+
+		for(String classes : allClassGraduates.keySet()){
+			output+= classes +" : "+ allClassGraduates.get(classes);
+		}
+
+		return output;
+	}
 }
