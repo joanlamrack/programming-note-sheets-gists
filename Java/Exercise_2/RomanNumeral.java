@@ -26,11 +26,10 @@ public class RomanNumeral{
 		romanReference.put(1 , "I");
 
 		for(int key : romanReference.keySet()){
-			// while(input >= key){
-			// 	output+= romanReference.get(key);
-			// 	input -= key;
-			// }
-			System.out.println(key);
+			while(input >= key){
+				output+= romanReference.get(key);
+				input -= key;
+			}
 		}
 		
 		return output;
