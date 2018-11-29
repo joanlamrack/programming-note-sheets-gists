@@ -9,7 +9,6 @@ public class RomanNumeral{
 
 	public static String doRomanNumeral(int input){
 		String output = "";
-		int baseTenRomanReference = 1;
 		LinkedHashMap<Integer, String> romanReference = new  LinkedHashMap<Integer,String>();
 
 		romanReference.put(1000 , "M");
