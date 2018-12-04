@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class BinarySearch {
 	public static void main(String[] args) {
 		int[] input = new int[] {2,6,7,9,14,20};
-		boolean result= doBinarySearch(input, 14);
+		boolean result= doBinarySearch(input, 16);
 
 		System.out.println(result);
 	}
@@ -11,7 +11,6 @@ public class BinarySearch {
 	public static boolean doBinarySearch(int[] input, int toSearch) {
 		// assuming that object already sorted
 		// search for middle array.
-
 		int length = input.length;
 		int middleIndex = 0;
 		int middleElement = 0;
@@ -29,10 +28,10 @@ public class BinarySearch {
 			return true;
 		}
 		else if(middleElement < toSearch){
-			return false || doBinarySearch( Arrays.copyOfRange(input, middleIndex, length-1) , toSearch);
+			return false || doBinarySearch( Arrays.copyOfRange(input, middleIndex, length+1) , toSearch);
 		}
 		else if(middleElement > toSearch){
-			return false || doBinarySearch( Arrays.copyOfRange(input, 0, middleIndex) , toSearch);
+			return false || doBinarySearch( Arrays.copyOfRange(input, 0, middleIndex+1) , toSearch);
 		}
 
 		return false;
