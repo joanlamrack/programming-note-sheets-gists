@@ -28,7 +28,7 @@ public class BinarySearch {
 			return true;
 		}
 		else if(middleElement < toSearch){
-			return false || doBinarySearch( Arrays.copyOfRange(input, middleIndex, length+1) , toSearch);
+			return false || doBinarySearch( Arrays.copyOfRange(input, middleIndex, length) , toSearch);
 		}
 		else if(middleElement > toSearch){
 			return false || doBinarySearch( Arrays.copyOfRange(input, 0, middleIndex+1) , toSearch);
