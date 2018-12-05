@@ -3,10 +3,13 @@ public class LinearSearch{
 
 	}
 
-	public static int doLinearSearch(int[] input){
-		int output = 0;
+	public static boolean doLinearSearch(int[] input, int toSearch){
 
-
-		return output;
+		for(int oneElement : input){
+			if(oneElement == toSearch){
+				return true;
+			}
+		}
+		return false;
 	}
 }
