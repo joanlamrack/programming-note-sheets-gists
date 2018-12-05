@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class BinarySearch {
 	public static void main(String[] args) {
-		int[] input = new int[] {2,6,7,9,14,20};
-		boolean result= doBinarySearch(input, 16);
+		int[] input = new int[] { 2, 6, 7, 9, 14, 20 };
+		boolean result = doBinarySearch(input, 1);
 
 		System.out.println(result);
 	}
@@ -21,17 +21,12 @@ public class BinarySearch {
 		}
 
 		middleElement = input[middleIndex];
-		if( Math.abs(middleIndex - length) == 1){
-			return false;
-		}
-		else if(middleElement == toSearch){
-			return true;
-		}
-		else if(middleElement < toSearch){
-			return false || doBinarySearch( Arrays.copyOfRange(input, middleIndex, length) , toSearch);
-		}
-		else if(middleElement > toSearch){
-			return false || doBinarySearch( Arrays.copyOfRange(input, 0, middleIndex+1) , toSearch);
+		if (input.length == 2) {
+			return input[0] == toSearch || input[1] == toSearch;
+		} else if (middleElement < toSearch) {
+			return false || doBinarySearch(Arrays.copyOfRange(input, middleIndex, length), toSearch);
+		} else if (middleElement > toSearch) {
+			return false || doBinarySearch(Arrays.copyOfRange(input, 0, middleIndex), toSearch);
 		}
 
 		return false;
