@@ -1,27 +1,35 @@
-public class People{
-    enum Gender{
-        FEMALE("FEMALE"),
-        MALE("MALE");
+public class People {
+	enum Gender {
+		FEMALE("FEMALE"), MALE("MALE");
 
-        private String gender;
+		private String gender;
 
-        Gender(String gender){
-            this.gender = gender;
-        }
+		Gender(String gender) {
+			this.gender = gender;
+		}
 
-        @Override
-        public String toString() {
-            return this.gender;
-        }
+		@Override
+		public String toString() {
+			return this.gender;
+		}
 	};
-	
+
 	private String name;
 	private Gender gender;
 	private int phase;
 
-    public People(String name, Gender gender, int phase){
-        this.name = name;
+	public People(String name, Gender gender, int phase) {
+		this.name = name;
 		this.gender = gender;
 		this.phase = phase;
-    }
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public java.lang.String toString() {
+		return this.name + " " + this.phase + "" + this.gender;
+	}
 }
