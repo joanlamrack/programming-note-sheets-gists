@@ -30,6 +30,6 @@ public class People {
 
 	@Override
 	public java.lang.String toString() {
-		return this.name + " " + this.phase + "" + this.gender;
+		return this.name + " " + this.phase + " " + this.gender;
 	}
 }
