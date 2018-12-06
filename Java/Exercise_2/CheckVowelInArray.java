@@ -4,10 +4,10 @@ public class CheckVowelInArray{
 	}
 
 	public static char[][] generateRandomAlphabetArray(){
-
+		
 	}
 
-	public static String searchAlphabetBlock(){
-		
+	public static String searchAlphabetBlock(char[][] arrayToSearchVowel){
+		return "";
 	}
 }
