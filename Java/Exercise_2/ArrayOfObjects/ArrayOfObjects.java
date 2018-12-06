@@ -7,8 +7,7 @@ public class ArrayOfObjects{
 		peoples.add( new People("akabr", People.Gender.MALE, 1));
 		peoples.add( new People("icha", People.Gender.FEMALE, 1));
 
-		searchAndPrint("icha", peoples);
-
+		 System.out.println(searchAndPrint("icha", peoples));
 	}
 
 	public static String searchAndPrint(String name, ArrayList<People> arrayToSearch){
