@@ -22,9 +22,24 @@ public class CheckVowelInArray{
 	}
 
 	public static String searchAlphabetBlock(char[][] arrayToSearchVowel){
-		for(int row = 0 ; row < arrayToSearchVowel.length ; arrayToSearchVowel++){
-			
+		
+		for(int row = 0 ; row < arrayToSearchVowel.length-1 ; row++){
+			for(int col = 0 ; col < arrayToSearchVowel[0].length-1 ; col++){
+				if( arrayToSearchVowel[row][col]  )
+			}	
 		}
+
+		return "";
+	}
+
+	public static boolean isVowel (char input){
+		char[] vowels = {'a', 'i', 'u', 'e', 'o'}; 
+
+		for(char vowel : vowels){
+			if(vowel == input) return true;
+		}
+
+		return false;
 	}
 
 	public static int generateRandomintWithinRange(int min, int max){
