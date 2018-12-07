@@ -11,6 +11,9 @@ public class CheckVowelInArray {
 		System.out.println(isVowel('a'));
 
 		System.out.println( searchAlphabetBlock(arrayTOSearch) );
+
+		printArray(arrayTOSearch);
+		
 	}
 
 	public static Character[][] generateRandomAlphabetArray(int row, int col) {
@@ -54,5 +57,11 @@ public class CheckVowelInArray {
 	public static int generateRandomintWithinRange(int min, int max) {
 		Random rand = new Random();
 		return rand.nextInt(25) + 1;
+	}
+
+	public static void printArray(Character[][] input){
+		for(Character[] row : input){
+			System.out.println( Arrays.toString(row) );  
+		}
 	}
 }
