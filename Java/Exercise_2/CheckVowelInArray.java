@@ -6,7 +6,7 @@ public class CheckVowelInArray {
 	public static void main(String[] args) {
 		Character[][] arrayTOSearch = generateRandomAlphabetArray(20, 20);
 
-		System.out.println( searchAlphabetBlock(arrayTOSearch) );
+		System.out.println(searchAlphabetBlock(arrayTOSearch));
 
 		printArray(arrayTOSearch);
 
@@ -55,9 +55,9 @@ public class CheckVowelInArray {
 		return rand.nextInt(25) + 1;
 	}
 
-	public static void printArray(Character[][] input){
-		for(Character[] row : input){
-			System.out.println( Arrays.toString(row) );  
+	public static void printArray(Character[][] input) {
+		for (Character[] row : input) {
+			System.out.println(Arrays.toString(row));
 		}
 	}
 }
