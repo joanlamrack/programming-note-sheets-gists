@@ -22,7 +22,9 @@ public class CheckVowelInArray{
 	}
 
 	public static String searchAlphabetBlock(char[][] arrayToSearchVowel){
-		return "";
+		for(int row = 0 ; row < arrayToSearchVowel.length ; arrayToSearchVowel++){
+			
+		}
 	}
 
 	public static int generateRandomintWithinRange(int min, int max){
