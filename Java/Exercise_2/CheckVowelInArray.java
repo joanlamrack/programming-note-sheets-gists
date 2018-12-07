@@ -5,6 +5,8 @@ import java.util.Random;
 public class CheckVowelInArray{
 	public static void main(String[]args){
 		System.out.println( Arrays.deepToString( generateRandomAlphabetArray(10, 10) ) );
+
+		System.out.println( isVowel('a') );
 	}
 
 	public static Character[][] generateRandomAlphabetArray(int row, int col){
@@ -25,7 +27,7 @@ public class CheckVowelInArray{
 		
 		for(int row = 0 ; row < arrayToSearchVowel.length-1 ; row++){
 			for(int col = 0 ; col < arrayToSearchVowel[0].length-1 ; col++){
-				if( arrayToSearchVowel[row][col]  )
+				// if( arrayToSearchVowel[row][col] ) return "";
 			}	
 		}
 
