@@ -6,10 +6,6 @@ public class CheckVowelInArray {
 	public static void main(String[] args) {
 		Character[][] arrayTOSearch = generateRandomAlphabetArray(20, 20);
 
-		System.out.println(Arrays.deepToString(arrayTOSearch));
-
-		System.out.println(isVowel('a'));
-
 		System.out.println( searchAlphabetBlock(arrayTOSearch) );
 
 		printArray(arrayTOSearch);
