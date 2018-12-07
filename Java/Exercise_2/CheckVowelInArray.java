@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CheckVowelInArray {
 	public static void main(String[] args) {
-		Character[][] arrayTOSearch = generateRandomAlphabetArray(10, 10);
+		Character[][] arrayTOSearch = generateRandomAlphabetArray(20, 20);
 
 		System.out.println(Arrays.deepToString(arrayTOSearch));
 
@@ -13,7 +13,7 @@ public class CheckVowelInArray {
 		System.out.println( searchAlphabetBlock(arrayTOSearch) );
 
 		printArray(arrayTOSearch);
-		
+
 	}
 
 	public static Character[][] generateRandomAlphabetArray(int row, int col) {
