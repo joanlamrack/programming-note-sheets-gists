@@ -38,7 +38,6 @@ public class TicTacToe {
 	public static boolean isX() {
 		Random rand = new Random();
 		int randomInt = rand.nextInt(2);
-		System.out.println(randomInt);
 		boolean itWillBeX = 1 == randomInt;
 		return itWillBeX;
 	}
