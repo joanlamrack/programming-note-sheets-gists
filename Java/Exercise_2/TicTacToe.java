@@ -4,8 +4,8 @@ import java.util.Random;
 public class TicTacToe {
 	public static void main(String[] args) {
 		char[][] generatedBoard = DoTicTacToe();
-		
-		PrintTicTacToe( generatedBoard );
+
+		PrintTicTacToe(generatedBoard);
 	}
 
 	public static char[][] DoTicTacToe() {
@@ -16,10 +16,12 @@ public class TicTacToe {
 
 		for (int rowIndex = 0; rowIndex < board.length; rowIndex++) {
 			for (int colIndex = 0; colIndex < board[0].length; colIndex++) {
-				if (isX() && ((Xcount == 5 && Ocount == 4) || (Ocount == 5 && Xcount == 5))) {
+				if ((isX() == true) && (Xcount < 5) || Ocount == 5) {
 					board[rowIndex][colIndex] = 'X';
+					Xcount++;
 				} else {
 					board[rowIndex][colIndex] = 'O';
+					Ocount = Ocount + 1;
 				}
 			}
 		}
@@ -35,6 +37,9 @@ public class TicTacToe {
 
 	public static boolean isX() {
 		Random rand = new Random();
-		return  1 == rand.nextInt(2);
+		int randomInt = rand.nextInt(2);
+		System.out.println(randomInt);
+		boolean itWillBeX = 1 == randomInt;
+		return itWillBeX;
 	}
 }
