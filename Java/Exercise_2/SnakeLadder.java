@@ -11,14 +11,20 @@ public class SnakeLadder {
 	public static Integer[][] doSnakeLadder(int widthHeightLadder) {
 		ArrayList<Integer[]> output = new ArrayList<Integer[]>();
 		ArrayList<Integer> row = new ArrayList<Integer>();
-		for (int start = 1; start < (widthHeightLadder * widthHeightLadder); start++) {
+		for (int start = 1; start <= (widthHeightLadder * widthHeightLadder); start++) {
 
 			row.add(start);
 			if (start % widthHeightLadder == 0) {
+
+				if(output.size()%2 == 1){
+					reverseArrayList(row);
+				}
 				output.add(row.toArray(new Integer[row.size()]));
 				row.clear();
 			}
 		}
+
+		reverseArrayList(output);
 
 		return output.toArray(new Integer[output.size()][]);
 	}
