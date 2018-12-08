@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class TicTacToe{
 	public static void main(String[]args){
 
@@ -11,5 +13,10 @@ public class TicTacToe{
 		};
 
 		return board;
+	}
+
+	public static boolean isX(){
+		Random rand = new Random();
+		return rand.nextInt(2);
 	}
 }
