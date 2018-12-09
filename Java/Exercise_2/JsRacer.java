@@ -20,11 +20,16 @@ public class JsRacer{
 	}
 
 	public static Character generateAlphabetFromInteger(int integerInput){
-		return (char) (integerInput - 1) + 'a';
+		return (Character) integerInput + 'a';
 	}
 
-	// public static HashMap<Character,Integer> playerList(int playerCount){
-		
-	// 	return
-	// }
+	public static HashMap<Character,Integer> playerList(int playerCount){
+		HashMap<Character, Integer> output = new HashMap<Character, Integer>();
+
+		for(int start = 0 ; start < playerCount ; start++ ){
+			output.put( generateAlphabetFromInteger(start) , 0);
+		}
+
+		return output;
+	}
 }
