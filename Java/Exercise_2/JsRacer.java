@@ -2,14 +2,16 @@ import java.io.IOException;
 
 public class JsRacer{
 	public static void main(String[]args){
-		System.out.println("HAHHAHAH");
+		
+	}
+
+	public static void DoClearScreen(){
 		try{
 			ClearScreen();
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		
 	}
 
 	public static void ClearScreen() throws IOException, InterruptedException {
