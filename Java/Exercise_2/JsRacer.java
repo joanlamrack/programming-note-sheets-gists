@@ -34,6 +34,11 @@ public class JsRacer {
 
 	public static char[][] generateBoard (HashMap<Character,Integer> playerStats, int trackLength){
 		char[][] output= new char[ playerStats.size() ][ trackLength];
+		int start = 0;
+		for(Character player: playerStats.keySet()){
+			output[start][playerStats.get(player)] = player;
+			start++;
+		}
 
 		return output;
 	}
