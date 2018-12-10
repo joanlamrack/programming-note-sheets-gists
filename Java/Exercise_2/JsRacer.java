@@ -42,4 +42,10 @@ public class JsRacer {
 
 		return output;
 	}
+
+	public static void printBoard (char[][] board){
+		for(char[] playerLine : board){
+			System.out.println(String.join("|", playerLine));
+		}
+	}
 }
