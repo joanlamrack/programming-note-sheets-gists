@@ -55,4 +55,20 @@ public class JsRacer {
 		Random rand = new Random();
 		return rand.nextInt(max) + 1;
 	}
+
+	public static void runJavaRacer(int player, int tracklength){
+		int minimumTrackLength = 5;
+		int minimumPlayer = 2;
+
+		if(player <= minimumPlayer){
+			player = minimumPlayer;
+		}
+
+		if(tracklength <= minimumTrackLength){
+			tracklength = minimumTrackLength;
+		}
+
+		HashMap<Character, Integer> playerData = playerList(player);
+		
+	}
 }
