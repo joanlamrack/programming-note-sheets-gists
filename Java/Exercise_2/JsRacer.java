@@ -81,15 +81,17 @@ public class JsRacer {
 		while(isEnding == false){
 			for(Character player : playerData.keySet()){
 				int playerPosition = playerData.get(player);
-				int advanceSteps = generateRandomintWithinRange( tracklength - playerPosition);
+				int advanceSteps = generateRandomintWithinRange( (tracklength-1) - playerPosition);
 				playerPosition = playerPosition + advanceSteps;
 				playerData.put(player, playerPosition);
 				
 				char[][] board = generateBoard(playerData, tracklength);
 				printBoard(board);
-				break;
+				if( isAtFinishLine(playerPosition, tracklength) ){
+					break;
+				}
+				Thread.sleep(1000);
 			}
-			break;
 		}
 	}
 }
