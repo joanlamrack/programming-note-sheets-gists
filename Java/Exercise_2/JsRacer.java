@@ -63,20 +63,33 @@ public class JsRacer {
 		return false;
 	}
 
-	public static void runJavaRacer(int player, int tracklength){
+	public static void runJavaRacer(int playerCount, int tracklength){
 		int minimumTrackLength = 5;
 		int minimumPlayer = 2;
+		boolean isEnding = false;
 
-		if(player <= minimumPlayer){
-			player = minimumPlayer;
+		if(playerCount <= minimumPlayer){
+			playerCount = minimumPlayer;
 		}
 
 		if(tracklength <= minimumTrackLength){
 			tracklength = minimumTrackLength;
 		}
 
-		HashMap<Character, Integer> playerData = playerList(player);
+		HashMap<Character, Integer> playerData = playerList(playerCount);
 
-		
+		while(isEnding == false){
+			for(Character player : playerData.keySet()){
+				int playerPosition = playerData.get(player);
+				int advanceSteps = generateRandomintWithinRange( tracklength - playerPosition);
+				playerPosition = playerPosition + advanceSteps;
+				playerData.put(player, playerPosition);
+				
+				char[][] board = generateBoard(playerData, trackLength);
+				printBoard(board);
+				break;
+			}
+			break;
+		}
 	}
 }
