@@ -53,7 +53,7 @@ public class JsRacer {
 
 	public static int generateRandomintWithinRange(int max) {
 		Random rand = new Random();
-		return rand.nextInt(max-3) + 1;
+		return rand.nextInt(max) + 1;
 	}
 
 	public static boolean isAtFinishLine(int playerPosition, int trackLength) {
