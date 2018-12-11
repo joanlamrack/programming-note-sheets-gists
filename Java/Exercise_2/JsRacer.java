@@ -1,8 +1,15 @@
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class JsRacer {
 	public static void main(String[] args) {
+
+		HashMap<Character, Integer> playerList = playerList(2);
+		char[][] board = generateBoard(playerList, 7);
+
+		printBoard(board);
+
 
 	}
 
@@ -19,7 +26,7 @@ public class JsRacer {
 	}
 
 	public static Character generateAlphabetFromInteger(int integerInput) {
-		return (Character) integerInput + 'a';
+		return (char)(integerInput + 'a');
 	}
 
 	public static HashMap<Character, Integer> playerList(int playerCount) {
@@ -36,16 +43,16 @@ public class JsRacer {
 		char[][] output= new char[ playerStats.size() ][ trackLength];
 		int start = 0;
 		for(Character player: playerStats.keySet()){
+			Arrays.fill(output[start], ' ');
 			output[start][playerStats.get(player)] = player;
 			start++;
 		}
-
 		return output;
 	}
 
 	public static void printBoard (char[][] board){
 		for(char[] playerLine : board){
-			System.out.println(String.join("|", playerLine));
+			System.out.println( Arrays.toString(playerLine));
 		}
 	}
 }
