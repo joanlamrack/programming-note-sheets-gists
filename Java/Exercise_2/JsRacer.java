@@ -1,15 +1,10 @@
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 public class JsRacer {
 	public static void main(String[] args) {
-
-		HashMap<Character, Integer> playerList = playerList(2);
-		char[][] board = generateBoard(playerList, 7);
-
-		printBoard(board);
-
 
 	}
 
@@ -54,5 +49,10 @@ public class JsRacer {
 		for(char[] playerLine : board){
 			System.out.println( Arrays.toString(playerLine));
 		}
+	}
+
+	public static int generateRandomintWithinRange(int max) {
+		Random rand = new Random();
+		return rand.nextInt(max) + 1;
 	}
 }
