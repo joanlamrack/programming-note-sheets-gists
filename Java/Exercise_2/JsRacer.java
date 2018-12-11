@@ -56,6 +56,13 @@ public class JsRacer {
 		return rand.nextInt(max) + 1;
 	}
 
+	public static boolean isAtFinishLine( int playerPosition, int trackLength ){
+		if(playerPosition >= trackLength){
+			return true;
+		}
+		return false;
+	}
+
 	public static void runJavaRacer(int player, int tracklength){
 		int minimumTrackLength = 5;
 		int minimumPlayer = 2;
@@ -69,6 +76,7 @@ public class JsRacer {
 		}
 
 		HashMap<Character, Integer> playerData = playerList(player);
+
 		
 	}
 }
