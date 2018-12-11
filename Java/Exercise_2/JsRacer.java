@@ -21,7 +21,7 @@ public class JsRacer {
 	}
 
 	public static Character generateAlphabetFromInteger(int integerInput) {
-		return (char)(integerInput + 'a');
+		return (char) (integerInput + 'a');
 	}
 
 	public static HashMap<Character, Integer> playerList(int playerCount) {
@@ -34,10 +34,10 @@ public class JsRacer {
 		return output;
 	}
 
-	public static char[][] generateBoard (HashMap<Character,Integer> playerStats, int trackLength){
-		char[][] output= new char[ playerStats.size() ][ trackLength];
+	public static char[][] generateBoard(HashMap<Character, Integer> playerStats, int trackLength) {
+		char[][] output = new char[playerStats.size()][trackLength];
 		int start = 0;
-		for(Character player: playerStats.keySet()){
+		for (Character player : playerStats.keySet()) {
 			Arrays.fill(output[start], ' ');
 			output[start][playerStats.get(player)] = player;
 			start++;
@@ -45,9 +45,9 @@ public class JsRacer {
 		return output;
 	}
 
-	public static void printBoard (char[][] board){
-		for(char[] playerLine : board){
-			System.out.println( Arrays.toString(playerLine));
+	public static void printBoard(char[][] board) {
+		for (char[] playerLine : board) {
+			System.out.println(Arrays.toString(playerLine));
 		}
 	}
 
@@ -56,44 +56,45 @@ public class JsRacer {
 		return rand.nextInt(max) + 1;
 	}
 
-	public static boolean isAtFinishLine( int playerPosition, int trackLength ){
-		if(playerPosition >= (trackLength-1)){
+	public static boolean isAtFinishLine(int playerPosition, int trackLength) {
+		if (playerPosition >= (trackLength - 1)) {
 			return true;
 		}
 		return false;
 	}
 
-	public static void runJavaRacer(int playerCount, int tracklength){
+	public static void runJavaRacer(int playerCount, int tracklength) {
 		int minimumTrackLength = 5;
 		int minimumPlayer = 2;
 		boolean isEnding = false;
 
-		if(playerCount <= minimumPlayer){
+		if (playerCount <= minimumPlayer) {
 			playerCount = minimumPlayer;
 		}
 
-		if(tracklength <= minimumTrackLength){
+		if (tracklength <= minimumTrackLength) {
 			tracklength = minimumTrackLength;
 		}
 
 		HashMap<Character, Integer> playerData = playerList(playerCount);
 
-		while(isEnding == false){
-			for(Character player : playerData.keySet()){
+		while (isEnding == false) {
+			for (Character player : playerData.keySet()) {
+				DoClearScreen();
+
 				int playerPosition = playerData.get(player);
-				int advanceSteps = generateRandomintWithinRange( (tracklength-1) - playerPosition);
+				int advanceSteps = generateRandomintWithinRange((tracklength - 1) - playerPosition);
 				playerPosition = playerPosition + advanceSteps;
 				playerData.put(player, playerPosition);
-				
+
 				char[][] board = generateBoard(playerData, tracklength);
 				printBoard(board);
-				if( isAtFinishLine(playerPosition, tracklength) ){
+				if (isAtFinishLine(playerPosition, tracklength)) {
 					break;
 				}
-				try{
-				Thread.sleep(1000);
-				}
-				catch(Exception e){
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
