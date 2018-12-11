@@ -91,6 +91,7 @@ public class JsRacer {
 				char[][] board = generateBoard(playerData, tracklength);
 				printBoard(board);
 				if (isAtFinishLine(playerPosition, tracklength)) {
+					System.out.println( player +" is the winner" );
 					isEnding = true;
 					break;
 				}
