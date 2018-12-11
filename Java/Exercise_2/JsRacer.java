@@ -52,7 +52,6 @@ public class JsRacer {
 	}
 
 	public static int generateRandomintWithinRange(int max) {
-		System.out.println(max);
 		Random rand = new Random();
 		return rand.nextInt(max) + 1;
 	}
