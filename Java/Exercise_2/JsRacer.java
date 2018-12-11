@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class JsRacer {
 	public static void main(String[] args) {
-
+		runJavaRacer(2, 8);
 	}
 
 	public static void DoClearScreen() {
