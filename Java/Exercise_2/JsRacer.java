@@ -57,7 +57,7 @@ public class JsRacer {
 	}
 
 	public static boolean isAtFinishLine( int playerPosition, int trackLength ){
-		if(playerPosition >= trackLength){
+		if(playerPosition >= (trackLength-1)){
 			return true;
 		}
 		return false;
@@ -90,7 +90,12 @@ public class JsRacer {
 				if( isAtFinishLine(playerPosition, tracklength) ){
 					break;
 				}
+				try{
 				Thread.sleep(1000);
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 		}
 	}
