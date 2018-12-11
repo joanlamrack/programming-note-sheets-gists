@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class JsRacer {
 	public static void main(String[] args) {
-		runJavaRacer(2, 8);
+		runJavaRacer(5, 8);
 	}
 
 	public static void DoClearScreen() {
@@ -53,7 +53,7 @@ public class JsRacer {
 
 	public static int generateRandomintWithinRange(int max) {
 		Random rand = new Random();
-		return rand.nextInt(max) + 1;
+		return rand.nextInt(max-3) + 1;
 	}
 
 	public static boolean isAtFinishLine(int playerPosition, int trackLength) {
