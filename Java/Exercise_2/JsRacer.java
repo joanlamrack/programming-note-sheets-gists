@@ -52,6 +52,7 @@ public class JsRacer {
 	}
 
 	public static int generateRandomintWithinRange(int max) {
+		System.out.println(max);
 		Random rand = new Random();
 		return rand.nextInt(max) + 1;
 	}
@@ -90,6 +91,7 @@ public class JsRacer {
 				char[][] board = generateBoard(playerData, tracklength);
 				printBoard(board);
 				if (isAtFinishLine(playerPosition, tracklength)) {
+					isEnding = true;
 					break;
 				}
 				try {
