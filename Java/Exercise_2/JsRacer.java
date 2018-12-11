@@ -85,7 +85,7 @@ public class JsRacer {
 				playerPosition = playerPosition + advanceSteps;
 				playerData.put(player, playerPosition);
 				
-				char[][] board = generateBoard(playerData, trackLength);
+				char[][] board = generateBoard(playerData, tracklength);
 				printBoard(board);
 				break;
 			}
