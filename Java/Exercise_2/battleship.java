@@ -1,8 +1,13 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.io.IOException;
+import java.lang.InterruptedIOException;
 
 public class battleship{
 	public static void main(String[]args){
+		char[][] board = generateBoard();
+
+		printBoard(board);
 		
 	}
 
@@ -38,7 +43,7 @@ public class battleship{
 
 	}
 
-	public static printBoard(char[][] boardToPrint){
+	public static void printBoard(char[][] boardToPrint){
 		for(char[] row : boardToPrint){
 			System.out.println( Arrays.toString(row) );
 		}
