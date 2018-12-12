@@ -1,21 +1,25 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.io.IOException;
-import java.lang.InterruptedIOException;
+import java.lang.InterruptedException;
 
-public class battleship{
-	public static void main(String[]args){
+public class battleship {
+	public static void main(String[] args) {
 		char[][] board = generateBoard();
 
 		printBoard(board);
-		
+
 	}
 
-	public static void doSleep(){
-		sleep(2000);
+	public static void doSleep() {
+		try {
+			sleep(2000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	public static void sleep(int milliseconds){
+	public static void sleep(int milliseconds) {
 		Thread.sleep(milliseconds);
 	}
 
@@ -31,8 +35,8 @@ public class battleship{
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public static char[][] generateBoard(){
-		HashMap<Character,Integer> shipData = new HashMap<Character,Integer>();
+	public static char[][] generateBoard() {
+		HashMap<Character, Integer> shipData = new HashMap<Character, Integer>();
 		shipData.put('b', 4);
 		shipData.put('c', 5);
 		shipData.put('d', 2);
@@ -43,9 +47,9 @@ public class battleship{
 
 	}
 
-	public static void printBoard(char[][] boardToPrint){
-		for(char[] row : boardToPrint){
-			System.out.println( Arrays.toString(row) );
+	public static void printBoard(char[][] boardToPrint) {
+		for (char[] row : boardToPrint) {
+			System.out.println(Arrays.toString(row));
 		}
 	}
 }
