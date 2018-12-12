@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class battleship{
@@ -13,7 +14,7 @@ public class battleship{
 		Thread.sleep(milliseconds);
 	}
 
-	public static void DoClearScreen() {
+	public static void doClearScreen() {
 		try {
 			ClearScreen();
 		} catch (Exception e) {
@@ -25,12 +26,21 @@ public class battleship{
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public static void generateBoard(){
+	public static char[][] generateBoard(){
 		HashMap<Character,Integer> shipData = new HashMap<Character,Integer>();
 		shipData.put('b', 4);
 		shipData.put('c', 5);
 		shipData.put('d', 2);
 
+		char[][] board = new char[10][10];
 
+		return board;
+
+	}
+
+	public static printBoard(char[][] boardToPrint){
+		for(char[] row : boardToPrint){
+			System.out.println( Arrays.toString(row) );
+		}
 	}
 }
