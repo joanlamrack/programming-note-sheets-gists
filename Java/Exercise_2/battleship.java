@@ -11,7 +11,15 @@ public class battleship{
 		Thread.sleep(milliseconds);
 	}
 
-	public static void clearScreen(){
-		
+	public static void DoClearScreen() {
+		try {
+			ClearScreen();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void ClearScreen() throws IOException, InterruptedException {
+		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 }
