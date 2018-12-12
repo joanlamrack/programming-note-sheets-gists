@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class battleship{
 	public static void main(String[]args){
 		
@@ -24,6 +26,11 @@ public class battleship{
 	}
 
 	public static void generateBoard(){
+		HashMap<Character,Integer> shipData = new HashMap<Character,Integer>();
+		shipData.put('b', 4);
+		shipData.put('c', 5);
+		shipData.put('d', 2);
+
 
 	}
 }
