@@ -22,4 +22,8 @@ public class battleship{
 	public static void ClearScreen() throws IOException, InterruptedException {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
+
+	public static void generateBoard(){
+
+	}
 }
