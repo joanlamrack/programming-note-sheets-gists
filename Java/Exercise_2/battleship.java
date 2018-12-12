@@ -35,15 +35,23 @@ public class battleship {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public static char[][] generateBoard() {
+	public static char[][] generatePlainBoard(){
+		char[][] board = new char[10][10];
+
+		for(char[] row: board){
+			 Arrays.fill(row, ' ');
+		}
+
+		return board;
+	}
+
+	public static char[][] generateBoardWithEnemies() {
 		HashMap<Character, Integer> shipData = new HashMap<Character, Integer>();
 		shipData.put('b', 4);
 		shipData.put('c', 5);
 		shipData.put('d', 2);
 
-		char[][] board = new char[10][10];
-
-		return board;
+		
 
 	}
 
