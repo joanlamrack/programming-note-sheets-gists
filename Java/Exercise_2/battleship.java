@@ -12,15 +12,15 @@ public class battleship {
 	}
 
 	public static void doSleep() {
-		try {
-			sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		sleep(2000);
 	}
 
 	public static void sleep(int milliseconds) {
-		Thread.sleep(milliseconds);
+		try {
+			Thread.sleep(milliseconds);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void doClearScreen() {
