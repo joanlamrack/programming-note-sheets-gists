@@ -1,9 +1,13 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 import java.io.IOException;
 import java.lang.InterruptedException;
 
 public class battleship {
+
+	static int boardLength = 10;
+
 	public static void main(String[] args) {
 		char[][] board = generateBoardWithEnemies();
 
@@ -36,7 +40,7 @@ public class battleship {
 	}
 
 	public static char[][] generatePlainBoard() {
-		char[][] board = new char[10][10];
+		char[][] board = new char[boardLength][boardLength];
 
 		for (char[] row : board) {
 			Arrays.fill(row, ' ');
@@ -52,7 +56,9 @@ public class battleship {
 		shipData.put('d', 2);
 
 		char[][] board = generatePlainBoard();
-		
+
+		putEnemyOnBoard(board, 2, 2, 'e', 4, false);
+
 		return board;
 
 	}
@@ -62,15 +68,25 @@ public class battleship {
 		return rand.nextInt(max) + 1;
 	}
 
-	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData){
-		
-	}
-
-	public static void putEnemyOnBoard(char[][]board, Character fleetMarker, int fleetLength, boolean isHorizontal){
+	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData) {
 
 	}
 
-	public static boolean checkPlacement(char[][] board, int placementRow, int placementColumn, int shipLength, boolean isHorizontal){
+	public static void putEnemyOnBoard(char[][] board, int placementRow, int placementColumn, Character fleetMarker,
+			int fleetLength, boolean isHorizontal) {
+		if (isHorizontal == true) {
+			for (int col = placementColumn; col < placementColumn + fleetLength; col++) {
+				board[placementRow][col] = fleetMarker;
+			}
+		} else {
+			for (int row = placementRow; row < placementRow + fleetLength; row++) {
+				board[row][placementColumn] = fleetMarker;
+			}
+		}
+	}
+
+	public static boolean checkPlacement(char[][] board, int placementRow, int placementColumn, int fleetLength,
+			boolean isHorizontal) {
 		return true;
 	}
 
