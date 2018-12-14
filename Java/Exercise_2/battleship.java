@@ -5,7 +5,7 @@ import java.lang.InterruptedException;
 
 public class battleship {
 	public static void main(String[] args) {
-		char[][] board = generateBoard();
+		char[][] board = generateBoardWithEnemies();
 
 		printBoard(board);
 
@@ -55,6 +55,11 @@ public class battleship {
 		
 		return board;
 
+	}
+
+	public static int generateRandomintWithinRange(int max) {
+		Random rand = new Random();
+		return rand.nextInt(max) + 1;
 	}
 
 	public static void printBoard(char[][] boardToPrint) {
