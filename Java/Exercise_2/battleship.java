@@ -94,7 +94,6 @@ public class battleship {
 		} else {
 			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
 				board[row][placementColumn] = fleetMarker;
-				printBoard(board);
 			}
 		}
 
