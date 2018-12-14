@@ -62,6 +62,14 @@ public class battleship {
 		return rand.nextInt(max) + 1;
 	}
 
+	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData){
+		
+	}
+
+	public static boolean checkPlacement(char[][] board, int placementRow, int placementColumn, int shipLength, boolean isHorizontal){
+		
+	}
+
 	public static void printBoard(char[][] boardToPrint) {
 		for (char[] row : boardToPrint) {
 			System.out.println(Arrays.toString(row));
