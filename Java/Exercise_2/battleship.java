@@ -66,9 +66,7 @@ public class battleship {
 
 	public static int generateRandomintWithinRange(int max) {
 		Random rand = new Random();
-		System.out.println("receiving max number:" + max);
 		int output = rand.nextInt(max);
-		System.out.println("result:" + output);
 		return output;
 	}
 
@@ -89,15 +87,11 @@ public class battleship {
 
 	public static void putEnemyOnBoard(char[][] board, int placementRow, int placementColumn, Character fleetMarker,
 			int fleetLength, boolean isHorizontal) {
-		if (isHorizontal == true) {
-			System.out.println("Generating for " + fleetMarker + " with direction right: placementCol ="
-					+ placementColumn + "fleet length: " + fleetLength);
+		if (isHorizontal == true) {]
 			for (int col = placementColumn; col < (placementColumn + fleetLength); col++) {
 				board[placementRow][col] = fleetMarker;
 			}
-		} else {
-			System.out.println("Generating for " + fleetMarker + " with direction down: placementRow =" + placementRow
-					+ "fleet length: " + fleetLength);
+		} else {]
 			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
 				System.out.println(row);
 				board[row][placementColumn] = fleetMarker;
