@@ -72,10 +72,8 @@ public class battleship {
 		for (Character fleetCharacter : enemiesData.keySet()) {
 			boolean generatedOrientationIsHorizontal = generateRandomintWithinRange(1) == 1 ? true : false;
 			Integer fleetLength = enemiesData.get(fleetCharacter);
-			int generatedCol = generateRandomintWithinRange(
-					generatedOrientationIsHorizontal == true ? boardLength : boardLength - fleetCharacter);
-			int generatedRow = generateRandomintWithinRange(
-					generatedOrientationIsHorizontal == true ? boardLength - fleetLength : boardLength);
+			int generatedCol = generateRandomintWithinRange(generatedOrientationIsHorizontal == true ? boardLength : boardLength - fleetLength);
+			int generatedRow = generateRandomintWithinRange(generatedOrientationIsHorizontal == true ? boardLength - fleetLength : boardLength);
 
 			putEnemyOnBoard(board, generatedRow, generatedCol, fleetCharacter, fleetLength,
 					generatedOrientationIsHorizontal);
