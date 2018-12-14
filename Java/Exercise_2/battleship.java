@@ -50,14 +50,14 @@ public class battleship {
 	}
 
 	public static char[][] generateBoardWithEnemies() {
-		HashMap<Character, Integer> shipData = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
 		shipData.put('b', 4);
 		shipData.put('c', 5);
 		shipData.put('d', 2);
 
 		char[][] board = generatePlainBoard();
 
-		putEnemyOnBoard(board, 2, 2, 'e', 4, false);
+		putEnemiesOnBoard(board, enemiesData);
 
 		return board;
 
@@ -65,11 +65,18 @@ public class battleship {
 
 	public static int generateRandomintWithinRange(int max) {
 		Random rand = new Random();
-		return rand.nextInt(max) + 1;
+		return rand.nextInt(max);
 	}
 
 	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData) {
+		for(Character fleetCharacter : enemiesData.keySet()){
+			int generatedCol = generateRandomintWithinRange(boardLength);
+			int generatedRow = generateRandomintWithinRange(boardLength);
+			boolean generatedOrientation = generateRandomintWithinRange(1) == 1 ? true : false;
+			int fleetLength = enemiesData.get(fleetCharacter);
 
+			putEnemyOnBoard(board, generatedRow, generatedCol, fleetCharacter, fleetLength, generatedOrientation);
+		}
 	}
 
 	public static void putEnemyOnBoard(char[][] board, int placementRow, int placementColumn, Character fleetMarker,
