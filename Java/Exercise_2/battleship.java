@@ -69,13 +69,16 @@ public class battleship {
 	}
 
 	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData) {
-		for(Character fleetCharacter : enemiesData.keySet()){
-			int generatedCol = generateRandomintWithinRange(boardLength);
-			int generatedRow = generateRandomintWithinRange(boardLength);
-			boolean generatedOrientation = generateRandomintWithinRange(1) == 1 ? true : false;
-			int fleetLength = enemiesData.get(fleetCharacter);
+		for (Character fleetCharacter : enemiesData.keySet()) {
+			boolean generatedOrientationIsHorizontal = generateRandomintWithinRange(1) == 1 ? true : false;
+			Integer fleetLength = enemiesData.get(fleetCharacter);
+			int generatedCol = generateRandomintWithinRange(
+					generatedOrientationIsHorizontal == true ? boardLength : boardLength - fleetCharacter);
+			int generatedRow = generateRandomintWithinRange(
+					generatedOrientationIsHorizontal == true ? boardLength - fleetLength : boardLength);
 
-			putEnemyOnBoard(board, generatedRow, generatedCol, fleetCharacter, fleetLength, generatedOrientation);
+			putEnemyOnBoard(board, generatedRow, generatedCol, fleetCharacter, fleetLength,
+					generatedOrientationIsHorizontal);
 		}
 	}
 
