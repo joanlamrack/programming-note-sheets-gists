@@ -66,8 +66,12 @@ public class battleship {
 		
 	}
 
+	public static void putEnemyOnBoard(char[][]board, Character fleetMarker, int fleetLength, boolean isHorizontal){
+
+	}
+
 	public static boolean checkPlacement(char[][] board, int placementRow, int placementColumn, int shipLength, boolean isHorizontal){
-		
+		return true;
 	}
 
 	public static void printBoard(char[][] boardToPrint) {
