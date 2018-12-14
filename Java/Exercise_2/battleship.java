@@ -51,9 +51,9 @@ public class battleship {
 
 	public static char[][] generateBoardWithEnemies() {
 		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
-		shipData.put('b', 4);
-		shipData.put('c', 5);
-		shipData.put('d', 2);
+		enemiesData.put('b', 4);
+		enemiesData.put('c', 5);
+		enemiesData.put('d', 2);
 
 		char[][] board = generatePlainBoard();
 
