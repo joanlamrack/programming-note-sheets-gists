@@ -87,11 +87,11 @@ public class battleship {
 
 	public static void putEnemyOnBoard(char[][] board, int placementRow, int placementColumn, Character fleetMarker,
 			int fleetLength, boolean isHorizontal) {
-		if (isHorizontal == true) {]
+		if (isHorizontal == true) {
 			for (int col = placementColumn; col < (placementColumn + fleetLength); col++) {
 				board[placementRow][col] = fleetMarker;
 			}
-		} else {]
+		} else {
 			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
 				System.out.println(row);
 				board[row][placementColumn] = fleetMarker;
