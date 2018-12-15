@@ -101,6 +101,22 @@ public class battleship {
 
 	public static boolean checkPlacement(char[][] board, int placementRow, int placementColumn, int fleetLength,
 			boolean isHorizontal) {
+		if (isHorizontal == true) {
+			for (int col = placementColumn; col < (placementColumn + fleetLength); col++) {
+				boolean isEmpty = Character.compare(board[placementRow][col], ' ');
+				if (isEmpty == false) {
+					return false;
+				}
+			}
+		} else {
+			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
+				boolean isEmpty = Character.compare(board[row][placementColumn], ' ');
+				is(isEmpty == false ){
+					return false;
+				}
+			}
+		}
+
 		return true;
 	}
 
