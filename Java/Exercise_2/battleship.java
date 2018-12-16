@@ -132,8 +132,17 @@ public class battleship {
 	}
 
 	public static void printBoard(char[][] boardToPrint) {
+		String output = "";
 		for (char[] row : boardToPrint) {
-			System.out.println(Arrays.toString(row));
+			String oneRow = " | ";
+			for (char element : row) {
+				oneRow += element;
+				oneRow += " | ";
+			}
+			oneRow += "\n";
+			output += oneRow;
 		}
+
+		System.out.println(output);
 	}
 }
