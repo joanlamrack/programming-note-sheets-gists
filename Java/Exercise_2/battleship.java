@@ -115,8 +115,6 @@ public class battleship {
 		if (isHorizontal == true) {
 			for (int col = placementColumn; col < (placementColumn + fleetLength); col++) {
 				boolean isEmpty = Character.compare(board[placementRow][col], ' ') == 0;
-				System.out.println(col);
-
 				if (isEmpty == false) {
 					return false;
 				}
