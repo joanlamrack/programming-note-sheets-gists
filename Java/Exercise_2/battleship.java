@@ -10,9 +10,17 @@ public class battleship {
 	static int boardLastIndex = boardLength - 1;
 
 	public static void main(String[] args) {
-		char[][] board = generateBoardWithEnemies();
+		// char[][] board = generateBoardWithEnemies();
 
-		printBoard(board);
+		// printBoard(board);
+
+		char[][] boardCheck = generatePlainBoard();
+
+		putEnemyOnBoard(boardCheck, 3, 4, 'b', 2, true);
+
+		System.out.println( checkPlacement(boardCheck, 3, 5, 2, true) );
+
+		printBoard(boardCheck);
 
 	}
 
@@ -103,14 +111,16 @@ public class battleship {
 			boolean isHorizontal) {
 		if (isHorizontal == true) {
 			for (int col = placementColumn; col < (placementColumn + fleetLength); col++) {
-				boolean isEmpty = Character.compare(board[placementRow][col], ' ');
+				boolean isEmpty = Character.compare(board[placementRow][col], ' ') == 0;
+				System.out.println(col);
+
 				if (isEmpty == false) {
 					return false;
 				}
 			}
 		} else {
 			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
-				boolean isEmpty = Character.compare(board[row][placementColumn], ' ');
+				boolean isEmpty = Character.compare(board[row][placementColumn], ' ') == 0;
 				if(isEmpty == false ){
 					return false;
 				}
