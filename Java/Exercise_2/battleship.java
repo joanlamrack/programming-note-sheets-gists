@@ -145,4 +145,14 @@ public class battleship {
 
 		System.out.println(output);
 	}
+
+	public static void playGame(){
+		char[][] board = generateBoardWithEnemies();
+
+
+	}
+
+	public static void placeShots(String[] shots){
+		
+	}
 }
