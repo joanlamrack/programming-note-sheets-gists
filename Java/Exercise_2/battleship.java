@@ -10,17 +10,9 @@ public class battleship {
 	static int boardLastIndex = boardLength - 1;
 
 	public static void main(String[] args) {
-		// char[][] board = generateBoardWithEnemies();
+		char[][] board = generateBoardWithEnemies();
 
-		// printBoard(board);
-
-		char[][] boardCheck = generatePlainBoard();
-
-		putEnemyOnBoard(boardCheck, 3, 4, 'b', 2, true);
-
-		System.out.println( checkPlacement(boardCheck, 3, 5, 2, true) );
-
-		printBoard(boardCheck);
+		printBoard(board);
 
 	}
 
@@ -80,12 +72,23 @@ public class battleship {
 
 	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData) {
 		for (Character fleetCharacter : enemiesData.keySet()) {
-			boolean generatedOrientationIsHorizontal = generateRandomintWithinRange(2) == 1 ? true : false;
-			Integer fleetLength = enemiesData.get(fleetCharacter);
-			int generatedCol = generateRandomintWithinRange(
-					generatedOrientationIsHorizontal == true ? boardLastIndex - fleetLength : boardLastIndex);
-			int generatedRow = generateRandomintWithinRange(
-					generatedOrientationIsHorizontal == true ? boardLastIndex : boardLastIndex - fleetLength);
+			boolean isValid = false;
+			boolean generatedOrientationIsHorizontal = false;
+			Integer fleetLength = 0;
+			int generatedCol = 0;
+			int generatedRow = 0;
+
+			while (isValid == false) {
+				generatedOrientationIsHorizontal = generateRandomintWithinRange(2) == 1 ? true : false;
+				fleetLength = enemiesData.get(fleetCharacter);
+				generatedCol = generateRandomintWithinRange(
+						generatedOrientationIsHorizontal == true ? boardLastIndex - fleetLength : boardLastIndex);
+				generatedRow = generateRandomintWithinRange(
+						generatedOrientationIsHorizontal == true ? boardLastIndex : boardLastIndex - fleetLength);
+
+				isValid = checkPlacement(board, generatedRow, generatedCol, fleetLength,
+						generatedOrientationIsHorizontal);
+			}
 
 			putEnemyOnBoard(board, generatedRow, generatedCol, fleetCharacter, fleetLength,
 					generatedOrientationIsHorizontal);
@@ -121,7 +124,7 @@ public class battleship {
 		} else {
 			for (int row = placementRow; row < (placementRow + fleetLength); row++) {
 				boolean isEmpty = Character.compare(board[row][placementColumn], ' ') == 0;
-				if(isEmpty == false ){
+				if (isEmpty == false) {
 					return false;
 				}
 			}
