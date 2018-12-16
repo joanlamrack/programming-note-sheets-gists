@@ -152,7 +152,13 @@ public class battleship {
 
 	}
 
-	public static void placeShots(String[] shots){
+	public static void placeShots(char[][] board, String[] shots){
+		for(String shot : shots){
+			placeShot(board, shot);
+		}
+	}
+
+	public static void placeShot(char[][] board, String shot){
 		
 	}
 }
