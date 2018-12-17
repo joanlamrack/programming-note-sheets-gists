@@ -6,9 +6,6 @@ import java.lang.InterruptedException;
 
 public class battleship {
 
-	static int boardLength = 10;
-	static int boardLastIndex = boardLength - 1;
-
 	public static void main(String[] args) {
 		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
 		enemiesData.put('b', 4);
