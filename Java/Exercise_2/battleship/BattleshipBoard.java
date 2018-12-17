@@ -6,16 +6,6 @@ import java.lang.InterruptedException;
 
 public class BattleshipBoard {
 
-	public static void main(String[] args) {
-		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
-		enemiesData.put('b', 4);
-		enemiesData.put('c', 5);
-		enemiesData.put('d', 2);
-		char[][] board = generateBoardWithEnemies(enemiesData);
-
-		printBoard(board);
-	}
-
 	public static void doSleep() {
 		sleep(2000);
 	}
