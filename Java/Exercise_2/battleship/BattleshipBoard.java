@@ -40,8 +40,8 @@ public class BattleshipBoard {
 		return board;
 	}
 
-	public static char[][] generateBoardWithEnemies(HashMap<Character, Integer> enemiesData) {
-		char[][] board = generatePlainBoard();
+	public static char[][] generateBoardWithEnemies(HashMap<Character, Integer> enemiesData, int boardLength) {
+		char[][] board = generatePlainBoard(boardLength);
 		putEnemiesOnBoard(board, enemiesData);
 		return board;
 	}
@@ -129,15 +129,5 @@ public class BattleshipBoard {
 		}
 
 		System.out.println(output);
-	}
-
-	public static void placeShots(char[][] board, String[] shots){
-		for(String shot : shots){
-			placeShot(board, shot);
-		}
-	}
-
-	public static void placeShot(char[][] board, String shot){
-		
 	}
 }
