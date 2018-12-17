@@ -10,11 +10,13 @@ public class BattleshipGame {
 		this.boardLength = boardLength;
 	}
 
-	public static void takeShots(String[] shots){
-
+	public void takeShots(String[] shots){
+		for(String shot: shots){
+			takeShot(shot);
+		}
 	}
 
-	public static void takeShot(String shot){
-		
+	public void takeShot(String shot){
+
 	}
 }
