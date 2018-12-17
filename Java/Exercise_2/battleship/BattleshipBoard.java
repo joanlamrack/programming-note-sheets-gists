@@ -53,6 +53,9 @@ public class BattleshipBoard {
 	}
 
 	public static void putEnemiesOnBoard(char[][] board, HashMap<Character, Integer> enemiesData) {
+		int boardLength = board.length;
+		int boardLastIndex = boardLength - 1;
+
 		for (Character fleetCharacter : enemiesData.keySet()) {
 			boolean isValid = false;
 			boolean generatedOrientationIsHorizontal = false;
