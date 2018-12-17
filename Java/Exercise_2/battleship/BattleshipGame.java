@@ -9,4 +9,12 @@ public class BattleshipGame {
 		this.enemiesData = enemiesData;
 		this.boardLength = boardLength;
 	}
+
+	public static void takeShots(String[] shots){
+
+	}
+
+	public static void takeShot(String shot){
+		
+	}
 }
