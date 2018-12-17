@@ -6,6 +6,7 @@ public class BattleshipGame {
 	int boardLastIndex = boardLength - 1;
 
 	public BattleshipGame(HashMap<Character, Integer> enemiesData, int boardLength) {
-		
+		this.enemiesData = enemiesData;
+		this.boardLength = boardLength;
 	}
 }
