@@ -6,8 +6,5 @@ public class Battleship{
 		enemiesData.put('b', 4);
 		enemiesData.put('c', 5);
 		enemiesData.put('d', 2);
-		char[][] board =  BattleshipBoard.generateBoardWithEnemies(enemiesData);
-
-		BattleshipBoard.printBoard(board);
 	}
 }
