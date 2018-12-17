@@ -10,10 +10,13 @@ public class battleship {
 	static int boardLastIndex = boardLength - 1;
 
 	public static void main(String[] args) {
-		char[][] board = generateBoardWithEnemies();
+		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
+		enemiesData.put('b', 4);
+		enemiesData.put('c', 5);
+		enemiesData.put('d', 2);
+		char[][] board = generateBoardWithEnemies(enemiesData);
 
 		printBoard(board);
-
 	}
 
 	public static void doSleep() {
@@ -50,18 +53,10 @@ public class battleship {
 		return board;
 	}
 
-	public static char[][] generateBoardWithEnemies() {
-		HashMap<Character, Integer> enemiesData = new HashMap<Character, Integer>();
-		enemiesData.put('b', 4);
-		enemiesData.put('c', 5);
-		enemiesData.put('d', 2);
-
+	public static char[][] generateBoardWithEnemies(HashMap<Character, Integer> enemiesData) {
 		char[][] board = generatePlainBoard();
-
 		putEnemiesOnBoard(board, enemiesData);
-
 		return board;
-
 	}
 
 	public static int generateRandomintWithinRange(int max) {
@@ -144,12 +139,6 @@ public class battleship {
 		}
 
 		System.out.println(output);
-	}
-
-	public static void playGame(){
-		char[][] board = generateBoardWithEnemies();
-
-
 	}
 
 	public static void placeShots(char[][] board, String[] shots){
