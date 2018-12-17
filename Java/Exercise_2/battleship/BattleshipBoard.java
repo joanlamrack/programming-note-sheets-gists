@@ -30,7 +30,7 @@ public class BattleshipBoard {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public static char[][] generatePlainBoard() {
+	public static char[][] generatePlainBoard(int boardLength) {
 		char[][] board = new char[boardLength][boardLength];
 
 		for (char[] row : board) {
