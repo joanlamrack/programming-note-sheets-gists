@@ -48,6 +48,8 @@ public class BattleshipGame {
 		for (String shot : shots) {
 			takeShot(shot);
 			printBoard();
+			doSleep();
+			doClearScreen();
 		}
 	}
 
