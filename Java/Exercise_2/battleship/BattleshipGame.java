@@ -47,9 +47,10 @@ public class BattleshipGame {
 	public void play(String[] shots) {
 		for (String shot : shots) {
 			takeShot(shot);
+			doClearScreen();
 			printBoard();
 			doSleep();
-			doClearScreen();
+			
 		}
 	}
 
