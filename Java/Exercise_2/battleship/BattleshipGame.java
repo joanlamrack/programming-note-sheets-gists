@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.io.IOException;
+import java.lang.InterruptedException;
 
 public class BattleshipGame {
 	char shotHit = 'X';
@@ -18,9 +20,34 @@ public class BattleshipGame {
 		BattleshipBoard.printBoard(this.board);
 	}
 
+	public static void doSleep() {
+		sleep(2000);
+	}
+
+	public static void sleep(int milliseconds) {
+		try {
+			Thread.sleep(milliseconds);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void doClearScreen() {
+		try {
+			ClearScreen();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void ClearScreen() throws IOException, InterruptedException {
+		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	}
+
 	public void takeShots(String[] shots){
 		for(String shot: shots){
 			takeShot(shot);
+			printBoard();
 		}
 	}
 
