@@ -89,10 +89,15 @@ public class BattleshipGame {
 	}
 
 	private void reduceFleetHealth(char fleetMarker){
-		
+		int enemyHealth = enemiesData.get(fleetMarker);
+		enemyHealth--;
+		enemiesData.put(fleetMarker, enemyHealth);
 	}
 
-	private void checkIfFleetSink(){
-		
+	private void checkIfFleetSink(char fleetMarker){
+		int enemyHealth = enemiesData.get(fleetMarker);
+		if(enemyHealth <= 0){
+			System.out.println(fleetMarker +" sinks!");
+		}
 	}
 }
