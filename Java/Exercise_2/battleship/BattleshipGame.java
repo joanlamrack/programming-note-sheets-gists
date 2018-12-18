@@ -87,4 +87,12 @@ public class BattleshipGame {
 		}
 		return true;
 	}
+
+	private void reduceFleetHealth(char fleetMarker){
+		
+	}
+
+	private void checkIfFleetSink(){
+		
+	}
 }
