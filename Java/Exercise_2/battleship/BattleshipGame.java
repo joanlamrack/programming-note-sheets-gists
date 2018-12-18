@@ -16,7 +16,7 @@ public class BattleshipGame {
 		this.board = BattleshipBoard.generateBoardWithEnemies(enemiesData, boardLength);
 	}
 
-	public void printBoard(){
+	public void printBoard() {
 		BattleshipBoard.printBoard(this.board);
 	}
 
@@ -44,8 +44,8 @@ public class BattleshipGame {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public void play(String[] shots){
-		for(String shot: shots){
+	public void play(String[] shots) {
+		for (String shot : shots) {
 			takeShot(shot);
 		}
 	}
@@ -53,15 +53,29 @@ public class BattleshipGame {
 	private void takeShot(String shot){
 		int rowCoordinate = shot.charAt(0) - 'A';
 		int colCoordinate =  Integer.parseInt(shot.substring(1, shot.length()));
+
+		if(rowCoordinate > 10){
+			rowCoordinate = 10;
+		}
+		else if (rowCoordinate < 0){
+			rowCoordinate = 0;
+		}
+
+		if(colCoordinate > 10){
+			colCoordinate = 10;
+		}
+		else(colCoordinate < 0){
+			colCoordinate = 0;
+		}
+
 		board[rowCoordinate][colCoordinate] = checkShot(row, col);
 	}
 
-	
-
-	private char checkShot(int row, int col){
-		switch(board[row][col]){
-			case 'X': 
-			case ' ': return shotMiss;
+	private char checkShot(int row, int col) {
+		switch (board[row][col]) {
+		case 'X':
+		case ' ':
+			return shotMiss;
 		}
 		return shotHit;
 	}
