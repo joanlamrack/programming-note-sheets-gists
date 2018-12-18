@@ -64,11 +64,11 @@ public class BattleshipGame {
 		if(colCoordinate > 10){
 			colCoordinate = 10;
 		}
-		else(colCoordinate < 0){
+		else if(colCoordinate < 0){
 			colCoordinate = 0;
 		}
 
-		board[rowCoordinate][colCoordinate] = checkShot(row, col);
+		board[rowCoordinate][colCoordinate] = checkShot(rowCoordinate, colCoordinate);
 	}
 
 	private char checkShot(int row, int col) {
