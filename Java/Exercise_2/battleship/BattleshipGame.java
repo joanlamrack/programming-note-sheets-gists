@@ -70,15 +70,21 @@ public class BattleshipGame {
 			colCoordinate = 0;
 		}
 
-		board[rowCoordinate][colCoordinate] = checkShot(rowCoordinate, colCoordinate);
+		boolean isShotHit = shotHit(rowCoordinate , colCoordinate);
+
+		board[rowCoordinate][colCoordinate] = placeShot(isShotHit);
 	}
 
-	private char checkShot(int row, int col) {
+	private char placeShot(boolean isShotHit){
+		return isShotHit == true ? shotHit : shotMiss;
+	}
+
+	private boolean shotHit(int row, int col) {
 		switch (board[row][col]) {
 		case 'X':
 		case ' ':
-			return shotMiss;
+			return false;
 		}
-		return shotHit;
+		return true;
 	}
 }
