@@ -47,24 +47,23 @@ public class BattleshipGame {
 	public void play(String[] shots) {
 		for (String shot : shots) {
 			takeShot(shot);
+			printBoard();
 		}
 	}
 
-	private void takeShot(String shot){
+	private void takeShot(String shot) {
 		int rowCoordinate = shot.charAt(0) - 'A';
-		int colCoordinate =  Integer.parseInt(shot.substring(1, shot.length()));
+		int colCoordinate = Integer.parseInt(shot.substring(1, shot.length())) - 1;
 
-		if(rowCoordinate > 10){
+		if (rowCoordinate > 10) {
 			rowCoordinate = 10;
-		}
-		else if (rowCoordinate < 0){
+		} else if (rowCoordinate < 0) {
 			rowCoordinate = 0;
 		}
 
-		if(colCoordinate > 10){
-			colCoordinate = 10;
-		}
-		else if(colCoordinate < 0){
+		if (colCoordinate > 9) {
+			colCoordinate = 9;
+		} else if (colCoordinate < 0) {
 			colCoordinate = 0;
 		}
 
