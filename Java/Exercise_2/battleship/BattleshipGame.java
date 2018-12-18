@@ -44,10 +44,9 @@ public class BattleshipGame {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
-	public void takeShots(String[] shots){
+	public void play(String[] shots){
 		for(String shot: shots){
 			takeShot(shot);
-			printBoard();
 		}
 	}
 
