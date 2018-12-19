@@ -71,9 +71,9 @@ public class BattleshipGame {
 			printBoard();
 			printMessage();
 			doSleep();
-			printPlayerStats();
-			printFleetStats();
 		}
+		printPlayerStats();
+		printFleetStats();
 	}
 
 	private void takeShot(String shot) {
