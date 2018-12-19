@@ -32,7 +32,9 @@ public class BattleshipGame {
 	}
 	
 	private void printPlayerStats(){
-		
+		System.out.println("Shots taken \t"+ this.shotsCount);
+		System.out.println("Shots hit \t"+this.shotHit);
+		System.out.println("Shots missed \t"+this.shotMiss);
 	}
 
 	private static void doSleep() {
@@ -88,9 +90,13 @@ public class BattleshipGame {
 
 		boolean isShotHit = shotHit(rowCoordinate , colCoordinate);
 		if(isShotHit == true){
+			this.shotHit++;
 			char fleetMarker = board[rowCoordinate][colCoordinate];
 			reduceFleetHealth(fleetMarker);
 			checkIfFleetSink(fleetMarker);
+		}
+		else{
+			this.shotMiss++;
 		}
 		board[rowCoordinate][colCoordinate] = placeShot(isShotHit);
 	}
