@@ -3,13 +3,13 @@ import java.io.IOException;
 import java.lang.InterruptedException;
 
 public class BattleshipGame {
-	char shotHit = 'X';
-	char shotMiss = '-';
-	HashMap<Character, Integer> enemiesData = null;
-	int boardLength = 0;
-	int boardLastIndex = boardLength - 1;
-	char[][] board = null;
-	String message = "";
+	private char shotHit = 'X';
+	private char shotMiss = '-';
+	private HashMap<Character, Integer> enemiesData = null;
+	private int boardLength = 0;
+	private int boardLastIndex = boardLength - 1;
+	private char[][] board = null;
+	private String message = "";
 
 	public BattleshipGame(HashMap<Character, Integer> enemiesData, int boardLength) {
 		this.enemiesData = enemiesData;
@@ -50,8 +50,8 @@ public class BattleshipGame {
 			takeShot(shot);
 			doClearScreen();
 			printBoard();
+			printMessage();
 			doSleep();
-			
 		}
 	}
 
@@ -88,6 +88,7 @@ public class BattleshipGame {
 		switch (board[row][col]) {
 		case 'X':
 		case ' ':
+			
 			return false;
 		}
 		return true;
@@ -109,5 +110,9 @@ public class BattleshipGame {
 	private void printMessage(){
 		System.out.println(this.message);
 		this.message="";
+	}
+
+	private void setMessage(String message){
+		this.message = message;
 	}
 }
