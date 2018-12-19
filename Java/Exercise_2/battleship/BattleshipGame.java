@@ -87,8 +87,10 @@ public class BattleshipGame {
 		switch (board[row][col]) {
 		case 'X':
 		case ' ':
+			System.out.println("You miss");
 			return false;
 		}
+		System.out.println("You hit a fleet!");
 		return true;
 	}
 
