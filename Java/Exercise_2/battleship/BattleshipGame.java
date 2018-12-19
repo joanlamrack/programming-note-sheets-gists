@@ -35,8 +35,8 @@ public class BattleshipGame {
 	private void printPlayerStats(){
 		System.out.println("\n --------------PLAYER STATS--------------");
 		System.out.println("Shots taken \t"+ this.shotsCount);
-		System.out.println("Shots hit \t"+this.shotHit);
-		System.out.println("Shots missed \t"+this.shotMiss);
+		System.out.println("Shots hit \t"+this.shotsHitsCount);
+		System.out.println("Shots missed \t"+this.shotsMissCount);
 	}
 
 	private static void doSleep() {
