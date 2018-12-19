@@ -25,6 +25,7 @@ public class BattleshipGame {
 	}
 
 	private void printFleetStats(){
+		System.out.println("\n --------------FLEET STATS--------------");
 		for( Character oneShip : this.enemiesData.keySet() ){
 			int healthBar = enemiesData.get(oneShip);
 			System.out.println(oneShip +" life: "+healthBar);
@@ -32,6 +33,7 @@ public class BattleshipGame {
 	}
 	
 	private void printPlayerStats(){
+		System.out.println("\n --------------PLAYER STATS--------------");
 		System.out.println("Shots taken \t"+ this.shotsCount);
 		System.out.println("Shots hit \t"+this.shotHit);
 		System.out.println("Shots missed \t"+this.shotMiss);
