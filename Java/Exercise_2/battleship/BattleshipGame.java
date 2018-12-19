@@ -57,7 +57,7 @@ public class BattleshipGame {
 		}
 	}
 
-	public static void ClearScreen() throws IOException, InterruptedException {
+	private static void ClearScreen() throws IOException, InterruptedException {
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 	}
 
@@ -90,19 +90,20 @@ public class BattleshipGame {
 
 		boolean isShotHit = shotHit(rowCoordinate , colCoordinate);
 		if(isShotHit == true){
-			this.shotHit++;
+			this.shotsHitsCount++;
 			char fleetMarker = board[rowCoordinate][colCoordinate];
 			reduceFleetHealth(fleetMarker);
 			checkIfFleetSink(fleetMarker);
 		}
 		else{
-			this.shotMiss++;
+			this.shotsMissCount++;
 		}
 		board[rowCoordinate][colCoordinate] = placeShot(isShotHit);
 	}
 
 	private char placeShot(boolean isShotHit){
-		return isShotHit == true ? shotHit : shotMiss;
+
+		return isShotHit == true ? this.shotHit : this.shotMiss;
 	}
 
 	private boolean shotHit(int row, int col) {
