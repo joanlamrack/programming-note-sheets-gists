@@ -10,6 +10,9 @@ public class BattleshipGame {
 	private int boardLastIndex = boardLength - 1;
 	private char[][] board = null;
 	private String message = "";
+	private int shotsCount = 0;
+	private int shotsMissCount = 0;
+	private int shotsHitsCount = 0;
 
 	public BattleshipGame(HashMap<Character, Integer> enemiesData, int boardLength) {
 		this.enemiesData = enemiesData;
@@ -17,15 +20,23 @@ public class BattleshipGame {
 		this.board = BattleshipBoard.generateBoardWithEnemies(enemiesData, boardLength);
 	}
 
-	public void printBoard() {
+	private void printBoard() {
 		BattleshipBoard.printBoard(this.board);
 	}
 
-	public static void doSleep() {
+	private void printFleetStats(){
+		for( Character oneShip : this.enemiesData.keySet() ){
+			
+		}
+	}
+
+
+
+	private static void doSleep() {
 		sleep(2000);
 	}
 
-	public static void sleep(int milliseconds) {
+	private static void sleep(int milliseconds) {
 		try {
 			Thread.sleep(milliseconds);
 		} catch (Exception e) {
@@ -33,7 +44,7 @@ public class BattleshipGame {
 		}
 	}
 
-	public static void doClearScreen() {
+	private static void doClearScreen() {
 		try {
 			ClearScreen();
 		} catch (Exception e) {
@@ -46,6 +57,7 @@ public class BattleshipGame {
 	}
 
 	public void play(String[] shots) {
+		this.shotsCount = shots.length;
 		for (String shot : shots) {
 			takeShot(shot);
 			doClearScreen();
