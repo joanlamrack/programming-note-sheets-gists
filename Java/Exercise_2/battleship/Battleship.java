@@ -10,6 +10,6 @@ public class Battleship{
 		int boardLength = 10;
 
 		BattleshipGame gameSession = new BattleshipGame(enemiesData, boardLength);
-		gameSession.play( new String[] {"F10", "C7"});
+		gameSession.play( new String[] {"F10", "C7", "D8", "F1", "C5", "A3"});
 	}
 }
