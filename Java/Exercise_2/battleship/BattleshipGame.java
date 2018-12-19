@@ -88,9 +88,10 @@ public class BattleshipGame {
 		switch (board[row][col]) {
 		case 'X':
 		case ' ':
-			
+			setMessage("You Miss!");
 			return false;
 		}
+		setMessage("You hit "+board[row][col]);
 		return true;
 	}
 
@@ -103,7 +104,7 @@ public class BattleshipGame {
 	private void checkIfFleetSink(char fleetMarker){
 		int enemyHealth = enemiesData.get(fleetMarker);
 		if(enemyHealth <= 0){
-			System.out.println(fleetMarker +" sinks!");
+			setMessage(fleetMarker + " sinks!");
 		}
 	}
 
