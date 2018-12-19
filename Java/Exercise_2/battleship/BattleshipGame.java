@@ -9,6 +9,7 @@ public class BattleshipGame {
 	int boardLength = 0;
 	int boardLastIndex = boardLength - 1;
 	char[][] board = null;
+	String message = "";
 
 	public BattleshipGame(HashMap<Character, Integer> enemiesData, int boardLength) {
 		this.enemiesData = enemiesData;
@@ -87,10 +88,8 @@ public class BattleshipGame {
 		switch (board[row][col]) {
 		case 'X':
 		case ' ':
-			System.out.println("You miss");
 			return false;
 		}
-		System.out.println("You hit a fleet!");
 		return true;
 	}
 
@@ -105,5 +104,10 @@ public class BattleshipGame {
 		if(enemyHealth <= 0){
 			System.out.println(fleetMarker +" sinks!");
 		}
+	}
+
+	private void printMessage(){
+		System.out.println(this.message);
+		this.message="";
 	}
 }
