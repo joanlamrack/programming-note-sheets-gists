@@ -69,6 +69,8 @@ public class BattleshipGame {
 			printBoard();
 			printMessage();
 			doSleep();
+			printPlayerStats();
+			printFleetStats();
 		}
 	}
 
