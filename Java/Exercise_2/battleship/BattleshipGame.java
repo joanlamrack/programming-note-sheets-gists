@@ -31,7 +31,9 @@ public class BattleshipGame {
 		}
 	}
 	
-
+	private void printPlayerStats(){
+		
+	}
 
 	private static void doSleep() {
 		sleep(2000);
