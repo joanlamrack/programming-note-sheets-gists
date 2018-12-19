@@ -26,10 +26,11 @@ public class BattleshipGame {
 
 	private void printFleetStats(){
 		for( Character oneShip : this.enemiesData.keySet() ){
-			
+			int healthBar = enemiesData.get(oneShip);
+			System.out.println(oneShip +" life: "+healthBar);
 		}
 	}
-
+	
 
 
 	private static void doSleep() {
