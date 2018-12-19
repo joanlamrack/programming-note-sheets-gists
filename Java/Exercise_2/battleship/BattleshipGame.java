@@ -71,7 +71,11 @@ public class BattleshipGame {
 		}
 
 		boolean isShotHit = shotHit(rowCoordinate , colCoordinate);
-
+		if(isShotHit == true){
+			char fleetMarker = board[rowCoordinate][colCoordinate];
+			reduceFleetHealth(fleetMarker);
+			checkIfFleetSink(fleetMarker);
+		}
 		board[rowCoordinate][colCoordinate] = placeShot(isShotHit);
 	}
 
