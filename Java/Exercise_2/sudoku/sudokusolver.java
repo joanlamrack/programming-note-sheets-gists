@@ -16,6 +16,6 @@ public class sudokusolver {
 	}
 
 	public static String[] separateByEnter(String input){
-
+		return input.split(split("\\r?\\n", -1));
 	}
 }
