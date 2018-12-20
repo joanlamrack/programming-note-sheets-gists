@@ -12,5 +12,6 @@ public class sudokusolver {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "";
 	}
 }
