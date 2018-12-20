@@ -1,4 +1,5 @@
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class sudokusolver {
 	public static void main(String[] args) {
@@ -6,6 +7,6 @@ public class sudokusolver {
 	}
 
 	public static String doReadFile(String fileName){
-		return new String(Files.readAllBytes(Paths.get(fileName)))
+		return new String(Files.readAllBytes(Paths.get(fileName)));
 	}
 }
