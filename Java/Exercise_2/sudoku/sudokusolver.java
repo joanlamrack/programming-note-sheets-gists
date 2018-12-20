@@ -14,4 +14,8 @@ public class sudokusolver {
 		}
 		return "";
 	}
+
+	public static String[] separateByEnter(String input){
+
+	}
 }
