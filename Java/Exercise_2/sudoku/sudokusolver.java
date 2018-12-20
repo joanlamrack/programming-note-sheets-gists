@@ -3,10 +3,14 @@ import java.nio.file.Paths;
 
 public class sudokusolver {
 	public static void main(String[] args) {
-		System.out.println( doReadFile("set01-unsolved.txt") );
+		System.out.println(doReadFile("set01-unsolved.txt"));
 	}
 
-	public static String doReadFile(String fileName){
-		return new String(Files.readAllBytes(Paths.get(fileName)));
+	public static String doReadFile(String fileName) {
+		try {
+			return new String(Files.readAllBytes(Paths.get(fileName)));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
