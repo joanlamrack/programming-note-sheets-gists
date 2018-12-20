@@ -1,9 +1,11 @@
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class sudokusolver {
 	public static void main(String[] args) {
-		System.out.println(doReadFile("set01-unsolved.txt"));
+		String fromFile = doReadFile("set01-unsolved.txt");
+		System.out.println(Arrays.toString( separateByEnter(fromFile) ));
 	}
 
 	public static String doReadFile(String fileName) {
@@ -16,6 +18,6 @@ public class sudokusolver {
 	}
 
 	public static String[] separateByEnter(String input){
-		return input.split(split("\\r?\\n", -1));
+		return input.split("\\r?\\n", -1);
 	}
 }
