@@ -2,7 +2,7 @@ import java.nio.file.Files;
 
 public class sudokusolver {
 	public static void main(String[] args) {
-		
+		System.out.println( doReadFile("set01-unsolved.txt") );
 	}
 
 	public static String doReadFile(String fileName){
