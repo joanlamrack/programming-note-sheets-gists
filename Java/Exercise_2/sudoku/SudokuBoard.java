@@ -11,11 +11,12 @@ public class SudokuBoard {
 	}
 
 	private void fillSudokuBoard(String input) {
+		char[] inputConverted = input.toCharArray();
 		for (int row = 0; row < boardLength; row++) {
 			for (int col = 0; col < boardLength; col++) {
 				int stringindex = (row + 1) * (col + 1);
-				String extractedString = input.substring(stringindex, stringindex + 1);
-				int convertedString = Integer.parseInt(extractedString);
+				char extractedString = inputConverted[stringindex];
+				int convertedString = Integer.parseInt(String.valueOf(extractedString));
 				placeNumberOnBoard(row, col, convertedString);
 			}
 		}
