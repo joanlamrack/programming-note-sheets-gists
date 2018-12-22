@@ -28,23 +28,33 @@ public class SudokuBoard {
 		}
 	}
 
-	public boolean used_in_row (int row , int num){
+	private boolean used_in_row (int row , int num, int[][] board){
 		for(int col = 0 ; col < boardLength ; col++){
-			if(this.board[row][col] == num){
+			if(board[row][col] == num){
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public boolean used_in_col (int col, int num){
+	private boolean used_in_col (int col, int num, int[][] board){
 		for(int row = 0 ; row < boardLength ; row++){
-			if(this.board[row][col]==num){
+			if(board[row][col]==num){
 				return true;
 			}
 		}
 		return false;
 	}
 
-	
+	private boolean used_in_box (int startRow, int startCol, int num, int[][] board){
+		for(int row = 0 ; row < 3 ; row++){
+			for(int col = 0 ; col < 3 ; col++){
+				if(board[row+startRow][col+startCol]== num ){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+ 
 }
