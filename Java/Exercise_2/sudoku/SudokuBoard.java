@@ -36,4 +36,15 @@ public class SudokuBoard {
 		}
 		return false;
 	}
+
+	public boolean used_in_col (int col, int num){
+		for(int row = 0 ; row < boardLength ; row++){
+			if(this.board[row][col]==num){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	
 }
