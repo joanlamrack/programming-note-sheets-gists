@@ -7,23 +7,16 @@ public class SudokuBoard {
 	private int inputLength = boardLength * boardLength;
 
 	public SudokuBoard(String sudokuvalue) {
-		if (sudokuvalue.length() > inputLength) {
-
-		}
-
+		fillSudokuBoard(sudokuvalue);
 	}
 
-	// private int[][] fillSudokuBoard(String input) {
-
-	// }
-
-	private void extractIndexAndPlaceItOnBoard(int IndexonStringinput, String input) {
+	private void fillSudokuBoard(String input) {
 		for (int row = 0; row < boardLength; row++) {
 			for (int col = 0; col < boardLength; col++) {
 				int stringindex = (row + 1) * (col + 1);
 				String extractedString = input.substring(stringindex, stringindex + 1);
 				int convertedString = Integer.parseInt(extractedString);
-				placeNumberOnBoard(row, col, convertedString );
+				placeNumberOnBoard(row, col, convertedString);
 			}
 		}
 	}
