@@ -64,7 +64,7 @@ public class SudokuBoard {
 	}
  
 	private boolean is_safe(int row, int col, int num, int[][] board){
-		return !used_in_box(row, col, num, board) &&
+		return !used_in_box(row - row % 3, col - col % 3, num, board) &&
 				!used_in_col(col, num, board) &&
 				!used_in_row(row, num, board);
 	} 
