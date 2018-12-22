@@ -1,3 +1,9 @@
+/*
+* Reimplementation of Sudoku Solver with backtrack
+* https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm-3ac44857fee8
+*/
+
+
 import java.util.Arrays;
 
 public class SudokuBoard {
@@ -57,4 +63,9 @@ public class SudokuBoard {
 		return false;
 	}
  
+	private boolean is_safe(int row, int col, int num, int[][] board){
+		return !used_in_box(row, col, num, board) &&
+				!used_in_col(col, num, board) &&
+				!used_in_row(row, num, board);
+	} 
 }
