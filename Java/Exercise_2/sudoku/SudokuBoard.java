@@ -12,6 +12,7 @@ public class SudokuBoard {
 
 	private void fillSudokuBoard(String input) {
 		char[] inputConverted = input.toCharArray();
+		System.out.println(inputConverted.length);
 		for (int row = 0; row < boardLength; row++) {
 			for (int col = 0; col < boardLength; col++) {
 				int stringindex = (row + 1) * (col + 1);
