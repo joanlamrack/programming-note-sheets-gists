@@ -14,7 +14,6 @@ public class SudokuBoard {
 		for (int index = 0; index < inputLength; index++) {
 			int col = index % boardLength;
 			int row = index / 9;
-
 			placeNumberOnBoard(row, col, Integer.parseInt(String.valueOf(inputConverted[index])));
 		}
 	}
@@ -27,5 +26,14 @@ public class SudokuBoard {
 		for (int[] row : this.board) {
 			System.out.println(Arrays.toString(row));
 		}
+	}
+
+	public boolean used_in_row (int row , int num){
+		for(int col = 0 ; col < boardLength ; col++){
+			if(this.board[row][col] == num){
+				return true;
+			}
+		}
+		return false;
 	}
 }
