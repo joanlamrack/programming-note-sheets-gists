@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.lang.Exception;
 
 public class SudokuBoard {
 	private int boardLength = 9;
