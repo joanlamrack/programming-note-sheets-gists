@@ -15,7 +15,7 @@ public class SudokuBoard {
 			int col = index % boardLength;
 			int row = index / 9;
 
-			placeNumberOnBoard(row, col,  Integer.parseInt( String.valueOf(inputConverted[index]));
+			placeNumberOnBoard(row, col, Integer.parseInt(String.valueOf(inputConverted[index])));
 		}
 	}
 
