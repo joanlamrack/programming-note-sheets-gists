@@ -1,11 +1,11 @@
 public class SudokuBoard{
-	int[][] board = null;
+	int[][] board = new int[9][9];
 
 	public SudokuBoard(String sudokuvalue){
 
 	}
 
-	private int[][] generateSudokuBoard(String input){
+	private int[][] fillSudokuBoard(String input){
 		
 	}
 
