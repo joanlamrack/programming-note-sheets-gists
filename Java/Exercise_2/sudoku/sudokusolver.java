@@ -4,6 +4,7 @@ public class sudokusolver {
 		String[] inputs = FileReader.separateByEnter(fromFile);
 
 		SudokuBoard board = new SudokuBoard(inputs[0]);
+		board.solve_sudoku();
 		board.printBoard();
 	}
 }
