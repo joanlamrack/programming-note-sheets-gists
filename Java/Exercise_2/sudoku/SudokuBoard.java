@@ -10,6 +10,7 @@ public class SudokuBoard {
 	private int boardLength = 9;
 	private int[][] board = new int[boardLength][boardLength];
 	private int inputLength = boardLength * boardLength;
+	private int BLANK = 0;
 
 	public SudokuBoard(String sudokuvalue) {
 		fillSudokuBoard(sudokuvalue);
@@ -67,5 +68,16 @@ public class SudokuBoard {
 		return !used_in_box(row - row % 3, col - col % 3, num, board) &&
 				!used_in_col(col, num, board) &&
 				!used_in_row(row, num, board);
+	}
+
+	private int[] get_unassigned_location(){
+		for(int row = 0 ; row < boardLength ; row++){
+			for(int col = 0 ; col < boardLength ; col++){
+				if(this.board[row][col] == BLANK) {
+					return new int[] {row, col};
+				};
+			}
+		}
+		return null;
 	} 
 }
