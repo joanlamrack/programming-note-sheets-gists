@@ -80,5 +80,13 @@ public class SudokuBoard {
 			}
 		}
 		return BOARD_FULL;
-	} 
+	}
+
+	private boolean solve_sudoku(){
+		if(BOARD_FULL.equals( get_unassigned_location() ) ){
+			return true;
+		}
+
+		return false;
+	}
 }
