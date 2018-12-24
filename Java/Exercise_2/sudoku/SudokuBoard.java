@@ -82,7 +82,8 @@ public class SudokuBoard {
 		return BOARD_FULL;
 	}
 
-	private boolean solve_sudoku(int[][] board){
+	public boolean solve_sudoku(){
+		int[][] board = this.board;
 		if(BOARD_FULL.equals( get_unassigned_location(board) ) ){
 			return true;
 		}
@@ -93,7 +94,7 @@ public class SudokuBoard {
 		for(int num = 1 ; num <=9 ; num++){
 			if( is_safe(row, col, num, board) ){
 				board[row][col] = num;
-				if(solve_sudoku(board) == true){
+				if(solve_sudoku() == true){
 					return true;
 				}
 
