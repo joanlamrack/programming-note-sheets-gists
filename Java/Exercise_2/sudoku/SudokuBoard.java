@@ -35,11 +35,11 @@ public class SudokuBoard {
 		for (int row = 0; row < boardLength; row++) {
 			output += "| ";
 			for (int col = 0; col < boardLength; col++) {
-				output += board[row][col] + ((col + 1) % 3 == 0 ? "||" : " | ");
+				output += board[row][col] + ((col + 1) % 3 == 0 && (col+1 != 9) ? " || " : " | ");
 			}
 			if ((row + 1) % 3 == 0) {
 				output += "\n";
-				for (int start = 0; start < boardLength * 4; start++) {
+				for (int start = 0; start < boardLength * 4.5; start++) {
 					output += "=";
 				}
 			}
