@@ -11,6 +11,7 @@ public class SudokuBoard {
 	private int[][] board = new int[boardLength][boardLength];
 	private int inputLength = boardLength * boardLength;
 	private int BLANK = 0;
+	private int[] BOARD_FULL = null;
 
 	public SudokuBoard(String sudokuvalue) {
 		fillSudokuBoard(sudokuvalue);
@@ -78,6 +79,6 @@ public class SudokuBoard {
 				};
 			}
 		}
-		return null;
+		return BOARD_FULL;
 	} 
 }
