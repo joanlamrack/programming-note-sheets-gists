@@ -1,3 +1,4 @@
+
 /*
 * Reimplementation of Sudoku Solver with backtrack
 * https://medium.com/@george.seif94/solving-sudoku-using-a-simple-search-algorithm-3ac44857fee8
@@ -30,9 +31,22 @@ public class SudokuBoard {
 	}
 
 	public void printBoard() {
-		for (int[] row : this.board) {
-			System.out.println(Arrays.toString(row));
+		String output = "";
+		for (int row = 0; row < boardLength; row++) {
+			output += "| ";
+			for (int col = 0; col < boardLength; col++) {
+				output += board[row][col] + ((col + 1) % 3 == 0 ? "||" : " | ");
+			}
+			if ((row + 1) % 3 == 0) {
+				output += "\n";
+				for (int start = 0; start < boardLength * 4; start++) {
+					output += "=";
+				}
+			}
+			output += "\n";
 		}
+
+		System.out.println(output);
 	}
 
 	private boolean used_in_row(int row, int num, int[][] board) {
