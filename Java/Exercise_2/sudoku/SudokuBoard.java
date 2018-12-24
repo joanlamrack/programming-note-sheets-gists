@@ -71,10 +71,10 @@ public class SudokuBoard {
 				!used_in_row(row, num, board);
 	}
 
-	private int[] get_unassigned_location(){
+	private int[] get_unassigned_location(int[][] board){
 		for(int row = 0 ; row < boardLength ; row++){
 			for(int col = 0 ; col < boardLength ; col++){
-				if(this.board[row][col] == BLANK) {
+				if(board[row][col] == BLANK) {
 					return new int[] {row, col};
 				};
 			}
@@ -82,9 +82,23 @@ public class SudokuBoard {
 		return BOARD_FULL;
 	}
 
-	private boolean solve_sudoku(){
-		if(BOARD_FULL.equals( get_unassigned_location() ) ){
+	private boolean solve_sudoku(int[][] board){
+		if(BOARD_FULL.equals( get_unassigned_location(board) ) ){
 			return true;
+		}
+
+		int row = get_unassigned_location(board)[0];
+		int col = get_unassigned_location(board)[1];
+
+		for(int num = 1 ; num <=9 ; num++){
+			if( is_safe(row, col, num, board) ){
+				board[row][col] = num;
+				if(solve_sudoku(board) == true){
+					return true;
+				}
+
+				board[row][col] = BLANK;
+			}
 		}
 
 		return false;
