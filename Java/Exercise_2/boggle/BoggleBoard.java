@@ -20,7 +20,13 @@ public class BoggleBoard {
 	}
 
 	public char[][] shake(int boardLength) {
-		char[][] output = new char[4][4];
+		char[][] output = new char[boardLength][boardLength];
+
+		for(int row = 0 ; row < boardLength ; row++){
+			for(int col = 0 ; col < boardLength; col++){
+				output[row][col] = generateRandomAlphabet();
+			}
+		}
 
 		return output;
 	}
