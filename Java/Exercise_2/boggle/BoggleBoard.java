@@ -3,6 +3,12 @@ public class BoggleBoard{
 
 	}
 
+	public char[][] shake(int boardLength){
+		char[][] output = new char[4][4];
+
+		return output;
+	}
+
 	public void printBoard(){
 
 	}
