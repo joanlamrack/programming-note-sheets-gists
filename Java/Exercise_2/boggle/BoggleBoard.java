@@ -4,7 +4,7 @@ import java.java.util.Random;
 public class BoggleBoard {
 	char[][] board = null;
 
-	public BoggleBoard(int boardLength) {
+	public BoggleBoard() {
 	}
 
 	public int generateRandomintWithinRange(int max) {
@@ -27,6 +27,8 @@ public class BoggleBoard {
 				output[row][col] = generateRandomAlphabet();
 			}
 		}
+
+		this.board = output;
 
 		return output;
 	}
