@@ -6,6 +6,12 @@ public class BoggleBoard {
 	public BoggleBoard(int boardLength) {
 	}
 
+	public static int generateRandomintWithinRange(int max) {
+		Random rand = new Random();
+		int output = rand.nextInt(max);
+		return output;
+	}
+
 	public char[][] shake(int boardLength) {
 		char[][] output = new char[4][4];
 
