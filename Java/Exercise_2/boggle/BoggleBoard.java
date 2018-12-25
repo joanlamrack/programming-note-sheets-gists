@@ -1,4 +1,8 @@
+import java.util.Arrays;
+
 public class BoggleBoard{
+	char[][] board = null;
+
 	public BoggleBoard(int boardLength){
 
 	}
@@ -10,6 +14,8 @@ public class BoggleBoard{
 	}
 
 	public void printBoard(){
-
+		for( char[] row : this.board){
+			System.out.println( Arrays.toString(row) );
+		}
 	}
 }
