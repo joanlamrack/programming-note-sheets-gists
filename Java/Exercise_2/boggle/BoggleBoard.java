@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.java.util.Random;
+import java.util.Random;
 
 public class BoggleBoard {
 	char[][] board = null;
