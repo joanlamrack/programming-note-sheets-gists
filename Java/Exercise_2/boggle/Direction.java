@@ -13,4 +13,15 @@ public class BoogleDirection{
 		UP_RIGHT
 	}
 
+	private static Map<String, String> OppositeDirection = Map.of(
+		DirectionPointer.DOWN.toString(), DirectionPointer.UP.toString(),
+		DirectionPointer.UP.toString(), DirectionPointer.DOWN.toString,
+		DirectionPointer.LEFT.toString(), DirectionPointer.RIGHT.toString(),
+		DirectionPointer.RIGHT.toString(), DirectionPointer.LEFT.toString(),
+		DirectionPointer.UP_LEFT.toString(), DirectionPointer.DOWN_RIGHT.toString(),
+		DirectionPointer.DOWN_LEFT.toString(), DirectionPointer.UP_RIGHT.toString,
+		DirectionPointer.UP_RIGHT.toString, DirectionPointer.DOWN_LEFT.toString(),
+		DirectionPointer.DOWN_RIGHT, DirectionPointer.UP_LEFT.toString()
+	);
+
 }
