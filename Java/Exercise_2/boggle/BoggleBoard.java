@@ -7,13 +7,13 @@ public class BoggleBoard {
 	public BoggleBoard() {
 	}
 
-	public int generateRandomintWithinRange(int max) {
+	private int generateRandomintWithinRange(int max) {
 		Random rand = new Random();
 		int output = rand.nextInt(max);
 		return output;
 	}
 
-	public char generateRandomAlphabet(){
+	private char generateRandomAlphabet(){
 		char output = 'A';
 		output+= this.generateRandomintWithinRange(26);
 		return output;
@@ -38,4 +38,6 @@ public class BoggleBoard {
 			System.out.println(Arrays.toString(row));
 		}
 	}
+
+
 }
