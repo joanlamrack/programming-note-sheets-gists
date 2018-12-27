@@ -14,17 +14,17 @@ public class BoggleBoard {
 		return output;
 	}
 
-	private char generateRandomAlphabet(){
+	private char generateRandomAlphabet() {
 		char output = 'A';
-		output+= this.generateRandomintWithinRange(26);
+		output += this.generateRandomintWithinRange(26);
 		return output;
 	}
 
 	public char[][] shake(int boardLength) {
 		char[][] output = new char[boardLength][boardLength];
 
-		for(int row = 0 ; row < boardLength ; row++){
-			for(int col = 0 ; col < boardLength; col++){
+		for (int row = 0; row < boardLength; row++) {
+			for (int col = 0; col < boardLength; col++) {
 				output[row][col] = generateRandomAlphabet();
 			}
 		}
@@ -40,30 +40,30 @@ public class BoggleBoard {
 		}
 	}
 
-	public void solve(){
-		for(int row = 0 ; row < this.board.length ; row++){
-			for(int col = 0 ; col < this.board.length ; col++){
+	public void solve() {
+		for (int row = 0; row < this.board.length; row++) {
+			for (int col = 0; col < this.board.length; col++) {
 
 			}
 		}
 	}
 
-	public boolean isThisWordFound(String word, char[][] board){
-		
+	public boolean isThisWordFound(String word, char[][] board) {
 
 		return false;
 	}
 
-	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board, ArrayList<int[]> coordinatesPassed){
+	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board,
+			ArrayList<int[]> coordinatesPassed) {
 
 		return false;
 	}
 
-	public boolean isThisCoordinateAlreadyPassed(int row, int col, ArrayList<int[]> coordinatesPassed){
-		for(int[] coordinate : coordinatesPassed){
+	public boolean isThisCoordinateAlreadyPassed(int row, int col, ArrayList<int[]> coordinatesPassed) {
+		for (int[] coordinate : coordinatesPassed) {
 			int coordinateRow = coordinate[0];
 			int coordinateCol = coordinate[1];
-			if((coordinateRow == row)&&(coordinateCol == col)){
+			if ((coordinateRow == row) && (coordinateCol == col)) {
 				return true;
 			}
 		}
