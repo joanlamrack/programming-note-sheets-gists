@@ -47,5 +47,13 @@ public class BoggleBoard {
 		}
 	}
 
-	public 
+	public boolean isThisWordFound(String word, char[][] board){
+		
+
+		return false;
+	}
+
+	public boolean searchAroundCoordinate(){
+		return false;
+	}
 }
