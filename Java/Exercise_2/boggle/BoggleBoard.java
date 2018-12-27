@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -53,7 +54,15 @@ public class BoggleBoard {
 		return false;
 	}
 
-	public boolean searchAroundCoordinate(){
+	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board, ArrayList<int[]> coordinatesPassed){
+
+		return false;
+	}
+
+	public boolean isThisCoordinateAlreadyPassed(int row, int col, ArrayList<int[]> coordinatesPassed){
+		for(int[] coordinate : coordinatesPassed){
+			
+		}
 		return false;
 	}
 }
