@@ -61,7 +61,11 @@ public class BoggleBoard {
 
 	public boolean isThisCoordinateAlreadyPassed(int row, int col, ArrayList<int[]> coordinatesPassed){
 		for(int[] coordinate : coordinatesPassed){
-			
+			int coordinateRow = coordinate[0];
+			int coordinateCol = coordinate[1];
+			if((coordinateRow == row)&&(coordinateCol == col)){
+				return true;
+			}
 		}
 		return false;
 	}
