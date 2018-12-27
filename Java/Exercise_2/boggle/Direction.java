@@ -1,6 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
 
+import com.sun.jmx.mbeanserver.GetPropertyAction;
+
 public class BoogleDirection{
 	private static enum DirectionPointer {
 		RIGHT,
@@ -45,4 +47,11 @@ public class BoogleDirection{
 		DirectionPointer.DOWN_LEFT.toString(), -1,
 		DirectionPointer.DOWN_RIGHT.toString(), 1
 	);
+
+	public static String getOppositeDirection(String direction){
+		if( oppositeDirection.containsKey(direction) == true ){
+			return oppositeDirection.get(direction);
+		}
+		throw new Exception("Invalid Direction");
+	}
 }
