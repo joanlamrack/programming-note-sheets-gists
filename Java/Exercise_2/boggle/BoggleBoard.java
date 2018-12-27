@@ -39,5 +39,13 @@ public class BoggleBoard {
 		}
 	}
 
+	public void solve(){
+		for(int row = 0 ; row < this.board.length ; row++){
+			for(int col = 0 ; col < this.board.length ; col++){
 
+			}
+		}
+	}
+
+	public 
 }
