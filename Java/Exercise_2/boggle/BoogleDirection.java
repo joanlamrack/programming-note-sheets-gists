@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.Exception;
 
 public class BoogleDirection{
 	private static enum DirectionPointer {
@@ -15,11 +16,11 @@ public class BoogleDirection{
 
 	private static Map<String, String> oppositeDirection = Map.of(
 		DirectionPointer.DOWN.toString(), DirectionPointer.UP.toString(),
-		DirectionPointer.UP.toString(), DirectionPointer.DOWN.toString,
+		DirectionPointer.UP.toString(), DirectionPointer.DOWN.toString(),
 		DirectionPointer.LEFT.toString(), DirectionPointer.RIGHT.toString(),
 		DirectionPointer.RIGHT.toString(), DirectionPointer.LEFT.toString(),
 		DirectionPointer.UP_LEFT.toString(), DirectionPointer.DOWN_RIGHT.toString(),
-		DirectionPointer.DOWN_LEFT.toString(), DirectionPointer.UP_RIGHT.toString,
+		DirectionPointer.DOWN_LEFT.toString(), DirectionPointer.UP_RIGHT.toString(),
 		DirectionPointer.UP_RIGHT.toString(), DirectionPointer.DOWN_LEFT.toString(),
 		DirectionPointer.DOWN_RIGHT.toString(), DirectionPointer.UP_LEFT.toString()
 	);
@@ -46,21 +47,21 @@ public class BoogleDirection{
 		DirectionPointer.DOWN_RIGHT.toString(), 1
 	);
 
-	public static String getOppositeDirection(String direction){
+	public static String getOppositeDirection(String direction) throws Exception{
 		if( oppositeDirection.containsKey(direction) == true ){
 			return oppositeDirection.get(direction);
 		}
 		throw new Exception("Invalid Direction");
 	}
 
-	public static int getRowTranslation(String direction){
+	public static int getRowTranslation(String direction) throws Exception{
 		if( rowTranslation.containsKey(direction) == true ){
 			return rowTranslation.get(direction);
 		}
 		throw new Exception("Invalid Direction");
 	}
 
-	public static int getColTranslation(String direction){
+	public static int getColTranslation(String direction) throws Exception{
 		if( colTranslation.containsKey(direction) == true ){
 			return colTranslation.get(direction);
 		}
