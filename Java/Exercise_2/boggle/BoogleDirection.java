@@ -1,8 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sun.jmx.mbeanserver.GetPropertyAction;
-
 public class BoogleDirection{
 	private static enum DirectionPointer {
 		RIGHT,
