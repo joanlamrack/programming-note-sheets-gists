@@ -54,14 +54,14 @@ public class BoogleDirection{
 		throw new Exception("Invalid Direction");
 	}
 
-	public static int getRowTranslation(String direction) throws Exception{
+	public static Integer getRowTranslation(String direction) throws Exception{
 		if( rowTranslation.containsKey(direction) == true ){
 			return rowTranslation.get(direction);
 		}
 		throw new Exception("Invalid Direction");
 	}
 
-	public static int getColTranslation(String direction) throws Exception{
+	public static Integer getColTranslation(String direction) throws Exception{
 		if( colTranslation.containsKey(direction) == true ){
 			return colTranslation.get(direction);
 		}

@@ -55,7 +55,6 @@ public class BoggleBoard {
 
 	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board,
 			ArrayList<int[]> coordinatesPassed) {
-
 			
 
 		return false;
