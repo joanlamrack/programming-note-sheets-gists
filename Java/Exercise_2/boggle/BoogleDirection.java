@@ -1,6 +1,9 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.Exception;
+import java.lang.Enum;
+
 
 public class BoogleDirection{
 	private static enum DirectionPointer {
@@ -66,5 +69,9 @@ public class BoogleDirection{
 			return colTranslation.get(direction);
 		}
 		throw new Exception("Invalid Direction");
+	}
+
+	public static String[] getDirections(){
+		return Arrays.stream( DirectionPointer.class.getEnumConstants()).map(Enum::name).toArray(String[] :: new);
 	}
 }
