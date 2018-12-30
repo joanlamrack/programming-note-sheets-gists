@@ -41,15 +41,24 @@ public class BoggleBoard {
 	}
 
 	public void solve() {
+		ArrayList<String> wordsFound = new ArrayList<String>();
 		for (int row = 0; row < this.board.length; row++) {
 			for (int col = 0; col < this.board.length; col++) {
-
+				for(String word : data.getData()){
+					boolean wordFound = isThisWordFound(row, col, word, this.board);
+					if(wordFound == true){
+						wordsFound.add(word);
+					}
+				}
 			}
 		}
 	}
 
-	public boolean isThisWordFound(String word, char[][] board) {
-
+	public boolean isThisWordFound(int row, int col, String word, char[][] board) {
+		ArrayList<int[]> coordinatesPassed = new ArrayList<int[]>();
+		if(searchAroundCoordinate(row, col, word, board, coordinatesPassed) == true){
+			return true;
+		}
 		return false;
 	}
 
