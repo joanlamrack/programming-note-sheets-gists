@@ -3,7 +3,6 @@ import java.util.Map;
 import java.lang.Exception;
 import java.lang.Enum;
 
-
 public class BoogleDirection{
 	private static enum DirectionPointer {
 		RIGHT,
