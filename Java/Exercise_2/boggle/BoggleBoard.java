@@ -58,6 +58,10 @@ public class BoggleBoard {
 		this.wordsFound.add(wordToBeAdded);
 	}
 
+	private void printWordFound(){
+		System.out.println( this.wordsFound.toString() );
+	}
+
 	public boolean isThisWordFound(int row, int col, String word, char[][] board) {
 		ArrayList<int[]> coordinatesPassed = new ArrayList<int[]>();
 		if(searchAroundCoordinate(row, col, word, board, coordinatesPassed) == true){
