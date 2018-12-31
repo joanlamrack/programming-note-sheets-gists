@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class BoggleBoard {
 	char[][] board = null;
+	ArrayList<String> wordsFound = new ArrayList<String>();
 
 	public BoggleBoard() {
 	}
@@ -40,18 +41,21 @@ public class BoggleBoard {
 		}
 	}
 
-	public void solve() {
-		ArrayList<String> wordsFound = new ArrayList<String>();
-		for (int row = 0; row < this.board.length; row++) {
-			for (int col = 0; col < this.board.length; col++) {
+	public void solve(char[][] board) {
+		for (int row = 0; row < board.length; row++) {
+			for (int col = 0; col < board.length; col++) {
 				for(String word : data.getData()){
-					boolean wordFound = isThisWordFound(row, col, word, this.board);
+					boolean wordFound = isThisWordFound(row, col, word, board);
 					if(wordFound == true){
-						wordsFound.add(word);
+						addWordsFound(word);
 					}
 				}
 			}
 		}
+	}
+
+	private void addWordsFound(String wordToBeAdded){
+		this.wordsFound.add(wordToBeAdded);
 	}
 
 	public boolean isThisWordFound(int row, int col, String word, char[][] board) {
