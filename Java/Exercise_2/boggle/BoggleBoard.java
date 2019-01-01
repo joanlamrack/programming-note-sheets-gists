@@ -73,8 +73,15 @@ public class BoggleBoard {
 	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board,
 			ArrayList<int[]> coordinatesPassed) {
 			for(String direction : BoogleDirection.getDirections()){
-				int rowAfterTranslation = row + BoogleDirection.getRowTranslation(direction);
+
+				try{
+					int rowAfterTranslation = row + BoogleDirection.getRowTranslation(direction);
 				int colAfterTranslation = col + BoogleDirection.getColTranslation(direction);
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+				
 				
 				if((board[rowAfterTranslation][colAfterTranslation] == word.charAt(0)) && (isThisCoordinateAlreadyPassed(rowAfterTranslation, colAfterTranslation, coordinatesPassed) == false)){
 					coordinatesPassed.add( new int[] {rowAfterTranslation, colAfterTranslation});
