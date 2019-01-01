@@ -44,9 +44,9 @@ public class BoggleBoard {
 	public void solve() {
 		for (int row = 0; row < this.board.length; row++) {
 			for (int col = 0; col < this.board.length; col++) {
-				for(String word : data.getData()){
+				for (String word : data.getData()) {
 					boolean wordFound = isThisWordFound(row, col, word, this.board);
-					if(wordFound == true){
+					if (wordFound == true) {
 						addWordsFound(word);
 					}
 				}
@@ -54,17 +54,17 @@ public class BoggleBoard {
 		}
 	}
 
-	private void addWordsFound(String wordToBeAdded){
+	private void addWordsFound(String wordToBeAdded) {
 		this.wordsFound.add(wordToBeAdded);
 	}
 
-	private void printWordFound(){
-		System.out.println( this.wordsFound.toString() );
+	private void printWordFound() {
+		System.out.println(this.wordsFound.toString());
 	}
 
 	public boolean isThisWordFound(int row, int col, String word, char[][] board) {
 		ArrayList<int[]> coordinatesPassed = new ArrayList<int[]>();
-		if(searchAroundCoordinate(row, col, word, board, coordinatesPassed) == true){
+		if (searchAroundCoordinate(row, col, word, board, coordinatesPassed) == true) {
 			return true;
 		}
 		return false;
@@ -72,24 +72,25 @@ public class BoggleBoard {
 
 	public boolean searchAroundCoordinate(int row, int col, String word, char[][] board,
 			ArrayList<int[]> coordinatesPassed) {
-			for(String direction : BoogleDirection.getDirections()){
-				int rowAfterTranslation = 0;
-				int colAfterTranslation = 0;
-				try{
-					rowAfterTranslation = row + BoogleDirection.getRowTranslation(direction);
+		for (String direction : BoogleDirection.getDirections()) {
+			int rowAfterTranslation = 0;
+			int colAfterTranslation = 0;
+			try {
+				rowAfterTranslation = row + BoogleDirection.getRowTranslation(direction);
 				colAfterTranslation = col + BoogleDirection.getColTranslation(direction);
-				}
-				catch(Exception e){
-					e.printStackTrace();
-				}
-				
-				
-				if((board[rowAfterTranslation][colAfterTranslation] == word.charAt(0)) && (isThisCoordinateAlreadyPassed(rowAfterTranslation, colAfterTranslation, coordinatesPassed) == false)){
-					coordinatesPassed.add( new int[] {rowAfterTranslation, colAfterTranslation});
-					return  searchAroundCoordinate(rowAfterTranslation , colAfterTranslation, word.substring(1), board, coordinatesPassed);
-				}
-
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
+
+			if ((board[rowAfterTranslation][colAfterTranslation] == word.charAt(0))
+					&& (isThisCoordinateAlreadyPassed(rowAfterTranslation, colAfterTranslation,
+							coordinatesPassed) == false)) {
+				coordinatesPassed.add(new int[] { rowAfterTranslation, colAfterTranslation });
+				return searchAroundCoordinate(rowAfterTranslation, colAfterTranslation, word.substring(1), board,
+						coordinatesPassed);
+			}
+
+		}
 
 		return false;
 	}
