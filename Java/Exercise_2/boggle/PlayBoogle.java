@@ -5,6 +5,6 @@ public class PlayBoogle{
 		BoggleBoard oneGameSession = new BoggleBoard();
 		oneGameSession.shake(5);
 		oneGameSession.printBoard();
-		System.out.println(  Arrays.toString(BoogleDirection.getDirections()) );
+		oneGameSession.
 	}
 }
