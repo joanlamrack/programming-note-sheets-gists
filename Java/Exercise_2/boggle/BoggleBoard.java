@@ -41,11 +41,11 @@ public class BoggleBoard {
 		}
 	}
 
-	public void solve(char[][] board) {
-		for (int row = 0; row < board.length; row++) {
-			for (int col = 0; col < board.length; col++) {
+	public void solve() {
+		for (int row = 0; row < this.board.length; row++) {
+			for (int col = 0; col < this.board.length; col++) {
 				for(String word : data.getData()){
-					boolean wordFound = isThisWordFound(row, col, word, board);
+					boolean wordFound = isThisWordFound(row, col, word, this.board);
 					if(wordFound == true){
 						addWordsFound(word);
 					}
@@ -78,7 +78,7 @@ public class BoggleBoard {
 				
 				if((board[rowAfterTranslation][colAfterTranslation] == word.charAt(0)) && (isThisCoordinateAlreadyPassed(rowAfterTranslation, colAfterTranslation, coordinatesPassed) == false)){
 					coordinatesPassed.add( new int[] {rowAfterTranslation, colAfterTranslation});
-					return  searchAroundCoordinate(rowAfterTranslation , colAfterTranslation, word.substring(1), board, coordinatesPassed)
+					return  searchAroundCoordinate(rowAfterTranslation , colAfterTranslation, word.substring(1), board, coordinatesPassed);
 				}
 
 			}
