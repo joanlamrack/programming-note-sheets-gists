@@ -5,6 +5,6 @@ public class PlayBoogle{
 		BoggleBoard oneGameSession = new BoggleBoard();
 		oneGameSession.shake(5);
 		oneGameSession.printBoard();
-		oneGameSession.
+		oneGameSession.solve();
 	}
 }
