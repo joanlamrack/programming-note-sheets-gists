@@ -84,7 +84,10 @@ public class BoggleBoard {
 
 			if ((board[rowAfterTranslation][colAfterTranslation] == word.charAt(0))
 					&& (isThisCoordinateAlreadyPassed(rowAfterTranslation, colAfterTranslation,
-							coordinatesPassed) == false)) {
+							coordinatesPassed) == false)
+					&& (rowAfterTranslation < this.board.length-1)
+					&& (colAfterTranslation < this.board.length-1)
+					) {
 				coordinatesPassed.add(new int[] { rowAfterTranslation, colAfterTranslation });
 				return searchAroundCoordinate(rowAfterTranslation, colAfterTranslation, word.substring(1), board,
 						coordinatesPassed);
